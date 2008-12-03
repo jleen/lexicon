@@ -10,10 +10,10 @@ digraph viridia
 
 // [[Achronic Inverter]]
 //// We do know that "Achronic Inverter invented by Dula Jyrexil" comes
-//// before "dest NG3" from this article, but from [[Core Process]], we know
-//// that it also comes before the First Nova Generator.  Since NG1 is before
-//// NG3, we choose to simplify our graph by removing the line to NG3, as it
-//// (now) provides no useful additional information.
+//// before "dest NG3" from this article, but from [[Core Process]], we
+//// know that it also comes before the First Nova Generator.  Since NG1
+//// is before NG3, we choose to simplify our graph by removing the line
+//// to NG3, as it (now) provides no useful additional information.
 
 //"Achronic Inverter invented by Dula Jyrexil" -> "dest NG3"
 "dest NG3" -> "research into Achronic Inverter resumes" -> "Heterochron Technology"
@@ -68,7 +68,7 @@ digraph viridia
 "widespread interstellar commerce" -> "growth of Naulochos and Antikyra"
 "widespread interstellar commerce" -> "Port Authority of Sector 17"
 
-////////////
+######
 
 
 // [[B'shin]]
@@ -111,8 +111,9 @@ digraph viridia
 "start of Arcological Mania" -> "construction of First Nova Generator" -> "disappearance of First Nova Generator"
 "dest NG3" -> "end of Arcological Mania"
 
-//// We now have a specific year for "disappearance NG1" and "dest NG3", so
-//// we do not need to include the line telling us the time between the two
+//// We now have a specific year for "disappearance NG1" and "dest NG3",
+//// so we do not need to include the line telling us the time between the
+//// two
 //"disappearance of First Nova Generator" -> "dest NG3" [label="50"]
 "dest NG3" -> "Logomere claims Boneozard involvment in NG3" -> "death of Logomere"
 
@@ -125,7 +126,7 @@ digraph viridia
 //// "end of Ctjn Empire" turns out to not be a relevent event
 //"Byforalla founded by Xafane the Inimitable" -> "end of Ctjn Empire"
 
-////////////
+######
 
 
 // [[Pylus Caldran]]
@@ -154,8 +155,8 @@ digraph viridia
 "Chemists' Guild formed" -> 4456 [dir="both" color="red"]
 "first Byforalla Chemical Works destroyed" -> 5238 [dir="both" color="red"]
 "development of Fangalexia" -> "first Byforalla Chemical Works destroyed"
-//// We have specific years for each of these events, so we don't need these
-//// lines
+//// We have specific years for each of these events, so we don't need
+//// these lines
 //"first Byforalla Chemical Works destroyed" -> "second Byforalla Chemical Works built" -> "Lesser Stillness ends"
 "second Byforalla Chemical Works built" -> 5241 [dir="both" color="red"]
 "Lesser Stillness" -> "Lesser Stillness ends"
@@ -195,7 +196,7 @@ digraph viridia
 // [[Ctjn Empire]]
 "Viridian independence" -> "Ctjn Empire gains control over Viridia Prime" -> "United People's Revolutionary Confederacy of Free Rocks"
 
-////////////
+######
 
 
 // [[Darkness Ascending]]
@@ -245,8 +246,8 @@ digraph viridia
 "Logomere returns from Hermes Cluster" -> "expansion of First Nova Generator" [label="months"]
 
 //// Although Dust Men sightings were blamed on Fangalexia, the blame was
-//// unfounded, as the first sightings actually happened before the drug was
-//// developed.
+//// unfounded, as the first sightings actually happened before the drug
+//// was developed.
 // "development of Fangalexia" -> "first encouter with Dust Men" [color="cyan" label="implied"]
 
 "expansion of First Nova Generator" -> "increased Dust Men sightings"
@@ -259,6 +260,9 @@ digraph viridia
 "birth of Ratan Dutrilik" -> 5230 [dir="both" color="red"]
 "birth of Ratan Dutrilik" -> "Battle of Kriinkok"
 //"birth of Ratan Dutrilik" -> "Ratan Dutrilik" -> "death of Ratan Dutrilik"
+
+######
+
 
 
 
