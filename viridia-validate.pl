@@ -397,7 +397,9 @@ sub init()
                 'Astrogation',
                 'Dries Historical Catalog',
                 'Druniad',
+                'Erasermind',
                 'Intoa',
+                'No-Nothing',
                 'Orsinder',
                 'Parallax Urgency',
                 'Starlight Documents',
@@ -620,6 +622,10 @@ if (grep { $_ eq "-u" } @ARGV)
   {
     updateFile("ByAuthor");
     updateFile("Index");
+    # Since we've now updated the file on the wiki, remove our (now
+    # out-of-date) local copy
+    unlink(viridiaDir() . "ByAuthor");
+    unlink(viridiaDir() . "Index");
   }
   else
   {
