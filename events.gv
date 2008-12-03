@@ -243,7 +243,12 @@ digraph viridia
 "first encouter with Dust Men" -> "Logomere returns from Hermes Cluster" [dir="both"]
 "construction of First Nova Generator" -> "expansion of First Nova Generator" -> "disappearance of First Nova Generator"
 "Logomere returns from Hermes Cluster" -> "expansion of First Nova Generator" [label="months"]
-"development of Fangalexia" -> "first encouter with Dust Men"
+
+## Although Dust Men sightings were blamed on Fangalexia, the blame was
+## unfounded, as the first sightings actually happened before the drug was
+## developed.
+# "development of Fangalexia" -> "first encouter with Dust Men" [color="cyan" label="implied"]
+
 "expansion of First Nova Generator" -> "increased Dust Men sightings"
 "birth of Mulcifer Sanguinate" -> "increased Dust Men sightings" -> "death of Mulcifer Sanguinate"
 "birth of Elgani Bariarch" -> "increased Dust Men sightings" -> "death of Elgani Bariarch"
