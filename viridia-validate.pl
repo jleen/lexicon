@@ -398,6 +398,7 @@ sub init()
                 'Dries Historical Catalog',
                 'Druniad',
                 'Intoa',
+                'Orsinder',
                 'Parallax Urgency',
                 'Starlight Documents',
                 'Tomorrow Hive',
