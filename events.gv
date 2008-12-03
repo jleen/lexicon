@@ -1,0 +1,182 @@
+digraph viridia
+{
+"dest NG3" [label="destruction of Third Nova Generator"]
+
+
+# [[Welcome]]
+"dest NG3" -> "start of Parallax Urgency"
+"start of Parallax Urgency" -> "end of Parallax Urgency"
+
+# [[Achronic Inverter]]
+# We do know that "Achronic Inverter invented by Dula Jyrexil" comes
+# before "dest NG3" from this article, but from [[Core Process]], we know
+# that it also comes before the First Nova Generator.  Since NG1 is before
+# NG3, we choose to simplify our graph by removing the line to NG3, as it
+# (now) provides no useful additional information.
+
+#"Achronic Inverter invented by Dula Jyrexil" -> "dest NG3"
+"dest NG3" -> "research into Achronic Inverter resumes" -> "Heterochron Technology"
+
+# [[Adnaimareui]]
+"Deorsai Protectorate" -> "spontaneous combustion of Malika Core Grid" -> "Adnaimareui"
+
+# [[Aleworms]]
+"Tomorrow Hive introduces Aleworms" -> "Parliament of Worlds fails to regulate Aleworms"
+
+# [[Almnetic Decay]]
+#"collapse of Almnetic Empire"
+"Almnetic Decay"
+
+# [[Ambivalence Drive]]
+"birth of Logomere" -> "Logomere returns from Hermes Cluster" -> "death of Logomere"
+"Logomere returns from Hermes Cluster" -> "Mind Plague sweeps Viridia Prime" -> "development of Fangalexia" -> "discovery of Ambivalence Drive in Logomere's ship"
+
+# [[Apex Station]]
+"Apex Station replaces Exalius Orbital Platform" -> "dest NG3" -> "Operation Aurora"
+
+# [[Arcological Mania]]
+"Arcological Mania" [label="Arcological Mania grips Viridia Prime"]
+# REVIEW
+"Lesser Stillness" -> "Arcological Mania" [dir="both" color="blue"]
+"Arcological Mania" -> "loss of Duskstar Citadel" [dir="both" color="blue"]
+"Lesser Stillness" -> "loss of Duskstar Citadel" [dir="both" color="blue"]
+
+"Lesser Stillness" -> "Elsoni Starsnare still in operation"
+"Arcological Mania" -> "Elsoni Starsnare still in operation"
+"loss of Duskstar Citadel" -> "Elsoni Starsnare still in operation"
+
+# [[Arcturianism]]
+"Arcturia emerges" [label="Arcturia emerges from Bkmma bearing Gar'tor'at Prophecy"]
+"Arcturia emerges" -> "death of Arcturia"
+"Arcturia emerges" -> "dest NG3" [label="~3500" color="blue"]
+"dest NG3" -> "End of Gar'tor'at Prophecy" [label="~1500" color="blue"]
+7850 -> "now" [color="green"]
+
+# [[Artifacturals]]
+"Artifacturals spliter from First Explorers" -> "Artifacturals enter Bkmma and disappear"
+
+# [[Ascacian Wastes]]
+
+# [[Astrogation]]
+"Starlight Documents discovered" -> "general solution to Cat and Mouse Problem" -> "widespread interstellar commerce" -> "Starlight Documents deciphered"
+"widespread interstellar commerce" -> "growth of Naulochos and Antikyra"
+"widespread interstellar commerce" -> "Port Authority of Sector 17"
+
+######
+
+
+# [[B'shin]]
+"B'shin in UVSDF" -> "Vermailian Confederacy incursions" -> "B'shin lives among Greenlings" -> "Flodyrion"
+
+# [[Baba Tears]]
+"General Li'shomay infested with Baba Tears"
+
+# [[Elgani Bariarch]]
+"Almnetic Decay" -> "Elgani Bariarch"
+"Elgani Bariarch debates Praetor Valcosa"
+"Elgani Bariarch" -> "Viridian independence"
+
+# [[Barometz]]
+"Emmanuel Grippe petitions the Parliament of Worlds to expel the Greenlings from Viridia Segunda" -> "Parliament agrees"
+
+# [[Battle of Kriinkok]]
+"start of Parallax Urgency" -> "Battle of Kriinkok" -> "end of Parallax Urgency"
+
+# [[Bazrahin]]
+
+# [[Voron Belthaszar]]
+"birth of Voron Belthaszar" -> "Elsoni Starsnare built" -> "Elsoni Starsnare still in operation"
+"Arcological Mania" -> "height of Parallax Urgency"
+"start of Parallax Urgency" -> "height of Parallax Urgency" -> "end of Parallax Urgency"
+
+# [[Bkmma]]
+
+# [[Blank Space]]
+"Battle of Devil's Nose Asteroid Cluster" -> "Operation Aurora" [label="weeks"]
+"Battle of Devil's Nose Asteroid Cluster" -> "The Cleft opened from Heterochron ship" [dir="both"]
+"Heterochron Technology" -> "The Cleft opened from Heterochron ship"
+
+# [[Boneozard Initiative]]
+"Boneozard Initiative political activities" -> "Arcological Mania"
+"start of Arcological Mania" -> "Arcological Mania" -> "end of Arcological Mania"
+"start of Arcological Mania" -> "construction of First Nova Generator" -> "disappearance of First Nova Generator"
+"dest NG3" -> "end of Arcological Mania"
+"disappearance of First Nova Generator" -> "dest NG3" [label="50"]
+"dest NG3" -> "Logomere claims Boneozard involvment in NG3" -> "death of Logomere"
+
+# "theft of NG2" comes from [[Commodore Lucius Claymore]]; we assume that
+# First, Second, Third are in order
+"disappearance of First Nova Generator" -> "theft of Second Nova Generator" -> "dest NG3" [color="cyan" label="assumed"]
+
+# [[Byforalla]]
+"Byforalla founded by Xafane the Inimitable" -> "end of Ctjn Empire"
+
+######
+
+
+# [[Pylus Caldran]]
+"birth of Pylus Caldran" -> 5231 [dir="both" color="red"]
+"death of Pylus Caldran" -> 5301 [dir="both" color="red"]
+"birth of Pylus Caldran" -> "death of Pylus Caldran" [label="70"]
+"death of Arcturia" -> 1861 [dir="both" label="approx" color="blue"]
+"birth of Pylus Caldran" -> "dest NG3"
+"dest NG3" -> "death of Pylus Caldran" [label="10"]
+"sack of Gul Arcturis Spicu in Crilinka" -> "death of Pylus Caldran"
+
+# via calculating that dest NG3 = "death of Pylus Caldran" - 10 years
+"dest NG3" -> 5291 [dir="both" color="red"]
+"End of Gar'tor'at Prophecy" -> 6784 [dir="both" label="approx" color="blue"]
+"Arcturia emerges" -> 1779 [dir="both" label="approx" color="blue"]
+"disappearance of First Nova Generator" -> 5241 [dir="both" color="red"]
+
+# [[Cat and Mouse Problem]]
+
+# [[Chemists' Guild]]
+
+"Chemists' Guild formed" -> 4456 [dir="both" color="red"]
+"first Byforalla Chemical Works destroyed" -> 5238 [dir="both" color="red"]
+"Fangalexia" -> "first Byforalla Chemical Works destroyed" -> "second Byforalla Chemical Works built" -> "Lesser Stillness ends"
+"second Byforalla Chemical Works built" -> 5241 [dir="both" color="red"]
+"Lesser Stillness" -> "Lesser Stillness ends"
+"Lesser Stillness ends" -> 5242 [dir="both" color="red"]
+"dest NG3" -> "end of Ctjn Empire"
+
+# [[The Cleft]]
+"Ta'rot'rag Prophecy" -> "The Cleft opened from Heterochron ship" [label="centuries"]
+
+# [[Commodore Lucius Claymore]]
+"birth of Logomere" -> "expedition to Evyl Nebula" -> "Viridia's first encounter with Vermailian Confederacy" -> "Logomere court-martial"
+"Logomere court-martial" -> "death of Commodore Lucius Claymore" [label="35"]
+"theft of Second Nova Generator" -> "death of Commodore Lucius Claymore" [label="short"]
+"Ta'rot'rag Prophecy"->"Logomere court-martial"
+
+# [[Conclave of Mek'ril]]
+# REVIEW
+"begin Conclave of Mek'ril peak of influence" -> 5261 [dir="both" color="red"]
+"end Conclave of Mek'ril peak of influence" -> 5296 [dir="both" color="red"]
+"begin Conclave of Mek'ril peak of influence" -> "Conclave of Mek'ril" -> "end Conclave of Mek'ril peak of influence"
+
+"Conclave of Mek'ril" -> "Ratan Dutrilik" [dir="both" color="blue"]
+"Conclave of Mek'ril" -> "Archprelate Varen Ontoli" [dir="both" color="blue"]
+"Conclave of Mek'ril" -> "Cerys Irolat" [dir="both" color="blue"]
+
+# [[Core Process]]
+"Achronic Inverter invented by Dula Jyrexil" -> "Dula Jyrexil invents Core Process" -> "construction of First Nova Generator"
+"Dula Jyrexil invents Core Process" -> "Eloi Farms"
+
+# [[Crilinka]]
+"start of Parallax Urgency" -> "Crilinka"
+# REVIEW: implies that Fangalexia, weather correction, Erasermind and Cat
+# and Mouse problem occur in Crilinka, which would be after/during
+# Parallax Urgency, but most of these were much earlier
+
+# [[Ctjn Empire]]
+
+"Viridian independence" -> "Ctjn Empire gains control over Viridia Prime" -> "United People's Revolutionary Confederacy of Free Rocks"
+
+
+# specific years mentioned
+
+1779->1861->4456->5231->5238->5241->5242->5261->5296->5291->5301->6784->7850 [color="green"]
+
+}
