@@ -1,5 +1,21 @@
 digraph viridia
 {
+// specific years mentioned, and all years within interesting ranges
+1779->1861->2462->2463 [color="green"]
+2463->2500 [dir="both" color="yellow" label="2463-2499 skipped by calendar"]
+2500->4456->5174->5196->5200 [color="green"]
+5200->5201->5202->5203->5204->5205->5206->5207->5208->5209->5210 [color="green"]
+5210->5211->5212->5213->5214->5215->5216->5217->5218->5219->5220 [color="green"]
+5220->5221->5222->5223->5224->5225->5226->5227->5228->5229->5230 [color="green"]
+5230->5231->5232->5233->5234->5235->5236->5237->5238->5239->5240 [color="green"]
+5240->5241->5242->5243->5244->5245->5246->5247->5248->5249->5250 [color="green"]
+5250->5251->5252->5253->5254->5255->5256->5257->5258->5259->5260 [color="green"]
+5260->5261->5262->5263->5264->5265->5266->5267->5268->5269->5270 [color="green"]
+5270->5271->5272->5273->5274->5275->5276->5277->5278->5279->5280 [color="green"]
+5280->5281->5282->5283->5284->5285->5286->5287->5288->5289->5290 [color="green"]
+5290->5291->5292->5293->5294->5295->5296->5297->5298->5299->5300 [color="green"]
+5300->5301->6784->7850 [color="green"]
+
 "dest NG3" [label="destruction of Third Nova Generator"]
 
 
@@ -24,6 +40,7 @@ digraph viridia
 
 // [[Aleworms]]
 "Tomorrow Hive introduces Aleworms" -> "Parliament of Worlds fails to regulate Aleworms"
+"Parliament of Worlds created" -> "Parliament of Worlds fails to regulate Aleworms"
 
 // [[Almnetic Decay]]
 //"collapse of Almnetic Empire"
@@ -86,7 +103,7 @@ digraph viridia
 "Elgani Bariarch debates Praetor Valcosa" -> "Viridian independence"
 
 // [[Barometz]]
-"Emmanuel Grippe petitions the Parliament of Worlds to expel the Greenlings from Viridia Segunda" -> "Parliament agrees"
+"Parliament of Worlds created" -> "Emmanuel Grippe petitions the Parliament of Worlds to expel the Greenlings from Viridia Segunda" -> "Parliament agrees"
 
 // [[Battle of Kriinkok]]
 "start of Parallax Urgency" -> "Battle of Kriinkok" -> "end of Parallax Urgency"
@@ -119,7 +136,9 @@ digraph viridia
 
 // "theft of NG2" comes from [[Commodore Lucius Claymore]]; we assume that
 // First, Second, Third are in order
-"disappearance of First Nova Generator" -> "theft of Second Nova Generator" -> "dest NG3" [color="cyan" label="assumed"]
+//// [[Erasermind]] confirms that First NG was before Second NG
+//"disappearance of First Nova Generator" -> "theft of Second Nova Generator" [color="cyan" label="assumed"]
+"theft of Second Nova Generator" -> "dest NG3" [color="cyan" label="assumed"]
 
 // [[Byforalla]]
 "Byforalla founded by Xafane the Inimitable"
@@ -159,7 +178,7 @@ digraph viridia
 //// these lines
 //"first Byforalla Chemical Works destroyed" -> "second Byforalla Chemical Works built" -> "Lesser Stillness ends"
 "second Byforalla Chemical Works built" -> 5241 [dir="both" color="red"]
-"Lesser Stillness" -> "Lesser Stillness ends"
+"Lesser Stillness starts" -> "Lesser Stillness" -> "Lesser Stillness ends"
 "Lesser Stillness ends" -> 5242 [dir="both" color="red"]
 //// "end of Ctjn Empire" turns out to not be a relevent event
 //"dest NG3" -> "end of Ctjn Empire"
@@ -185,7 +204,7 @@ digraph viridia
 
 // [[Core Process]]
 "Achronic Inverter invented by Dula Jyrexil" -> "Dula Jyrexil invents Core Process" -> "construction of First Nova Generator"
-"Dula Jyrexil invents Core Process" -> "Eloi Farms"
+"Dula Jyrexil invents Core Process" -> "Eloi Farms created on Viridia Prime"
 
 // [[Crilinka]]
 "start of Parallax Urgency" -> "Crilinka"
@@ -264,10 +283,51 @@ digraph viridia
 ######
 
 
+// [[Eloi Farms]]
+"Eloi Farms created on Viridia Prime" -> 5218 [dir="both" color="red"]
+"birth of Cerys Irolat" -> "Cerys Irolat"
+"birth of Cerys Irolat" -> "Eloi Farms created on Viridia Prime"
+"activation of Second Nova Generator" -> "theft of Second Nova Generator"
+"Eloi Farms created on Viridia Prime" -> "activation of Second Nova Generator" -> "Eloi Farms shut down"
+"Eloi Farms shut down" -> "Eloi Farms reopened to produce Juvi Juice" [label="decades"]
 
+// [[Elsoni Starsnare]]
+"start of Lesser Stillness" -> "Elsoni Starsnare built"
+"birth of Bwiyn Qetz" -> 5196 -> "death of Bwiyn Qetz"
+"Elsoni Starsnare construction begins" -> 5235 [dir="both" color="red"]
+"Elsoni Starsnare construction begins" -> "Elsoni Starsnare built"
 
-// specific years mentioned
+// [[Emancipation Day]]
+"Sovereignty and Seccession Acts" -> 5274 [dir="both" color="red"]
+"death of Elgani Bariarch" -> 5284 [dir="both" color="red"]
+"Viridian independence" -> 5274 [dir="both" color="cyan" label="assumed"]
 
-1779->1861->4456->5174->5211->5213->5223->5230->5231->5233->5238->5239->5241->5242->5244->5245->5261->5273->5296->5291->5301->6784->7850 [color="green"]
+// [[Endotian Calendar]]
+"Parliament of Worlds created" -> 2500 [dir="both" color="red"]
+"Port Authority of Sector 17" -> "Parliament of Worlds created" [dir="both"]
+"Parliament of Worlds created" -> "Almnetic Decay"
+"Vermailian Confederacy formed" -> "Parliament of Worlds created"
+"Omniscium Wherescape formed" -> "Parliament of Worlds created"
+"birth of Rasuium Rasuios" -> "Parliament of Worlds created" -> "death of Rasuium Rasuios"
+// 2463-2499 Years skipped due to switching calendars
+
+// [[Erasermind]]
+"disappearance of First Nova Generator" -> "development of Erasermind" -> "theft of Second Nova Generator"
+"development of Erasermind" -> "Jaxpel Project begins"
+"formation of United Viridian Stellar Defense Forces" -> "Jaxpel Project"
+// Jaxpel Project appears to be formed during the rise/height of
+// Logomere's carer
+"birth of Logomere" -> "Jaxpel Project begins" -> "death of Logomere"
+"Jaxpel Project begins"
+
+// [[Estyrian Conflict]]
+"Parliament of Worlds created" -> "Estyria joins Parliament of Worlds" -> 5264
+"Estyrian Conflict begins" -> 5264 [dir="both" label="approx" color="blue"]
+"Estyrian Conflict ends" -> 5267 [dir="both" label="approx" color="blue"]
+
+// [[Eudaemonism]]
+
+// [[Evyl Nebula]]
+"research into Evyl Nebula" -> "construction of First Nova Generator"
 
 }
