@@ -5,20 +5,22 @@ digraph viridia
 
 # [[Welcome]]
 "dest NG3" -> "start of Parallax Urgency"
-"start of Parallax Urgency" -> "end of Parallax Urgency"
+## Now redundant to say "start is before end"
+#"start of Parallax Urgency" -> "end of Parallax Urgency"
 
 # [[Achronic Inverter]]
-# We do know that "Achronic Inverter invented by Dula Jyrexil" comes
-# before "dest NG3" from this article, but from [[Core Process]], we know
-# that it also comes before the First Nova Generator.  Since NG1 is before
-# NG3, we choose to simplify our graph by removing the line to NG3, as it
-# (now) provides no useful additional information.
+## We do know that "Achronic Inverter invented by Dula Jyrexil" comes
+## before "dest NG3" from this article, but from [[Core Process]], we know
+## that it also comes before the First Nova Generator.  Since NG1 is before
+## NG3, we choose to simplify our graph by removing the line to NG3, as it
+## (now) provides no useful additional information.
 
 #"Achronic Inverter invented by Dula Jyrexil" -> "dest NG3"
 "dest NG3" -> "research into Achronic Inverter resumes" -> "Heterochron Technology"
 
 # [[Adnaimareui]]
-"Deorsai Protectorate" -> "spontaneous combustion of Malika Core Grid" -> "Adnaimareui"
+"Malika Core Grid destroyed" [label="spontaneous combustion of Malika Core Grid"]
+"Deorsai Protectorate" -> "Malika Core Grid destroyed" -> "Adnaimareui"
 
 # [[Aleworms]]
 "Tomorrow Hive introduces Aleworms" -> "Parliament of Worlds fails to regulate Aleworms"
@@ -48,8 +50,12 @@ digraph viridia
 # [[Arcturianism]]
 "Arcturia emerges" [label="Arcturia emerges from Bkmma bearing Gar'tor'at Prophecy"]
 "Arcturia emerges" -> "death of Arcturia"
-"Arcturia emerges" -> "dest NG3" [label="~3500" color="blue"]
-"dest NG3" -> "End of Gar'tor'at Prophecy" [label="~1500" color="blue"]
+
+## Since we now have approximate years for each of these (exact year for
+## dest NG3), we no long need the lines indicating duration
+
+#"Arcturia emerges" -> "dest NG3" [label="~3500" color="blue"]
+#"dest NG3" -> "End of Gar'tor'at Prophecy" [label="~1500" color="blue"]
 7850 -> "now" [color="green"]
 
 # [[Artifacturals]]
@@ -66,15 +72,18 @@ digraph viridia
 
 
 # [[B'shin]]
-"B'shin in UVSDF" -> "Vermailian Confederacy incursions" -> "B'shin lives among Greenlings" -> "Flodyrion"
+"formation of United Viridian Stellar Defense Forces" -> "B'shin in UVSDF"
+"birth of B'shin" -> "B'shin in UVSDF" -> "Vermailian Confederacy incursions" -> "B'shin lives among Greenlings" -> "death of B'shin"
+"B'shin lives among Greenlings" -> "Flodyrion"
 
 # [[Baba Tears]]
 "General Li'shomay infested with Baba Tears"
 
 # [[Elgani Bariarch]]
-"Almnetic Decay" -> "Elgani Bariarch"
-"Elgani Bariarch debates Praetor Valcosa"
-"Elgani Bariarch" -> "Viridian independence"
+"Almnetic Decay" -> "death of Elgani Bariarch"
+"birth of Praetor Valcosa" -> "Elgani Bariarch debates Praetor Valcosa" -> "death of Praetor Valcosa"
+"birth of Elgani Bariarch" -> "Elgani Bariarch debates Praetor Valcosa" -> "death of Elgani Bariarch"
+"Elgani Bariarch debates Praetor Valcosa" -> "Viridian independence"
 
 # [[Barometz]]
 "Emmanuel Grippe petitions the Parliament of Worlds to expel the Greenlings from Viridia Segunda" -> "Parliament agrees"
@@ -101,7 +110,10 @@ digraph viridia
 "start of Arcological Mania" -> "Arcological Mania" -> "end of Arcological Mania"
 "start of Arcological Mania" -> "construction of First Nova Generator" -> "disappearance of First Nova Generator"
 "dest NG3" -> "end of Arcological Mania"
-"disappearance of First Nova Generator" -> "dest NG3" [label="50"]
+
+## We now have a specific year for "disappearance NG1" and "dest NG3", so
+## we do not need to include the line telling us the time between the two
+#"disappearance of First Nova Generator" -> "dest NG3" [label="50"]
 "dest NG3" -> "Logomere claims Boneozard involvment in NG3" -> "death of Logomere"
 
 # "theft of NG2" comes from [[Commodore Lucius Claymore]]; we assume that
@@ -109,7 +121,9 @@ digraph viridia
 "disappearance of First Nova Generator" -> "theft of Second Nova Generator" -> "dest NG3" [color="cyan" label="assumed"]
 
 # [[Byforalla]]
-"Byforalla founded by Xafane the Inimitable" -> "end of Ctjn Empire"
+"Byforalla founded by Xafane the Inimitable"
+## "end of Ctjn Empire" turns out to not be a relevent event
+#"Byforalla founded by Xafane the Inimitable" -> "end of Ctjn Empire"
 
 ######
 
@@ -117,13 +131,17 @@ digraph viridia
 # [[Pylus Caldran]]
 "birth of Pylus Caldran" -> 5231 [dir="both" color="red"]
 "death of Pylus Caldran" -> 5301 [dir="both" color="red"]
-"birth of Pylus Caldran" -> "death of Pylus Caldran" [label="70"]
+## reporting Caldran's age is redundant with his birth and death year;
+## simplify graph by not including this line
+#"birth of Pylus Caldran" -> "death of Pylus Caldran" [label="70"]
 "death of Arcturia" -> 1861 [dir="both" label="approx" color="blue"]
-"birth of Pylus Caldran" -> "dest NG3"
-"dest NG3" -> "death of Pylus Caldran" [label="10"]
+## reporting Caldran's birth occured before dest NG3 is now redundant
+#"birth of Pylus Caldran" -> "dest NG3"
+## We have exact dates for these, so reporting 10 years is redundant
+#"dest NG3" -> "death of Pylus Caldran" [label="10"]
 "sack of Gul Arcturis Spicu in Crilinka" -> "death of Pylus Caldran"
 
-# via calculating that dest NG3 = "death of Pylus Caldran" - 10 years
+## via calculating that dest NG3 = "death of Pylus Caldran" - 10 years
 "dest NG3" -> 5291 [dir="both" color="red"]
 "End of Gar'tor'at Prophecy" -> 6784 [dir="both" label="approx" color="blue"]
 "Arcturia emerges" -> 1779 [dir="both" label="approx" color="blue"]
@@ -132,14 +150,18 @@ digraph viridia
 # [[Cat and Mouse Problem]]
 
 # [[Chemists' Guild]]
-
+"Byforalla founded by Xafane the Inimitable" -> "Chemists' Guild formed"
 "Chemists' Guild formed" -> 4456 [dir="both" color="red"]
 "first Byforalla Chemical Works destroyed" -> 5238 [dir="both" color="red"]
-"Fangalexia" -> "first Byforalla Chemical Works destroyed" -> "second Byforalla Chemical Works built" -> "Lesser Stillness ends"
+"development of Fangalexia" -> "first Byforalla Chemical Works destroyed"
+## We have specific years for each of these events, so we don't need these
+## lines
+#"first Byforalla Chemical Works destroyed" -> "second Byforalla Chemical Works built" -> "Lesser Stillness ends"
 "second Byforalla Chemical Works built" -> 5241 [dir="both" color="red"]
 "Lesser Stillness" -> "Lesser Stillness ends"
 "Lesser Stillness ends" -> 5242 [dir="both" color="red"]
-"dest NG3" -> "end of Ctjn Empire"
+## "end of Ctjn Empire" turns out to not be a relevent event
+#"dest NG3" -> "end of Ctjn Empire"
 
 # [[The Cleft]]
 "Ta'rot'rag Prophecy" -> "The Cleft opened from Heterochron ship" [label="centuries"]
@@ -156,7 +178,7 @@ digraph viridia
 "end Conclave of Mek'ril peak of influence" -> 5296 [dir="both" color="red"]
 "begin Conclave of Mek'ril peak of influence" -> "Conclave of Mek'ril" -> "end Conclave of Mek'ril peak of influence"
 
-"Conclave of Mek'ril" -> "Ratan Dutrilik" [dir="both" color="blue"]
+#"Conclave of Mek'ril" -> "Ratan Dutrilik" [dir="both" color="blue"]
 "Conclave of Mek'ril" -> "Archprelate Varen Ontoli" [dir="both" color="blue"]
 "Conclave of Mek'ril" -> "Cerys Irolat" [dir="both" color="blue"]
 
@@ -171,12 +193,72 @@ digraph viridia
 # Parallax Urgency, but most of these were much earlier
 
 # [[Ctjn Empire]]
-
 "Viridian independence" -> "Ctjn Empire gains control over Viridia Prime" -> "United People's Revolutionary Confederacy of Free Rocks"
+
+######
+
+
+# [[Darkness Ascending]]
+"birth of Okaki Hontoyo" -> "Darkness Ascending I travels through Blank Space 1st time" -> "Darkness Ascending I attempts travel through Blank Space 2nd time"
+"Darkness Ascending I attempts travel through Blank Space 2nd time" -> "death of Okaki Hontoyo" [dir="both"]
+"Darkness Ascending II" -> "The Cleft opened from Heterochron ship" [dir="both"]
+"Darkness Ascending II" -> "General Li'shomay steals Darkness Ascending III"
+"General Li'shomay infested with Baba Tears" -> "General Li'shomay steals Darkness Ascending III" [label="?"]
+"General Li'shomay steals Darkness Ascending III" -> "death of General Li'shomay" [dir="both"]
+
+# [[Deorsai Protectorate]]
+"Deorsai Protectorate founded on Viridia Segunda" -> 5174 [dir="both" color="red"]
+"formation of United Viridian Stellar Defense Forces" -> "Deorsai Protectorate founded on Viridia Segunda" -> "White Flower Dreaming"
+"Dula Jyrexil invents Core Process" -> "Malika Core Grid deployed"
+"Malika Core Grid deployed" -> 5211 [dir="both" color="red"]
+"Malika Core Grid destroyed" -> 5213 [dir="both" color="red"]
+#"Malika Core Grid deployed" -> "Malika Core Grid destroyed"
+"Malika Core Grid deployed" -> "Nova Entity"
+# Text is: "within the next decade" from 5213
+5223 -> "construction of First Nova Generator" [color="blue"]
+"construction of First Nova Generator" -> 5233 [color="blue"]
+
+# [[Dries Historical Catalog]]
+"birth of Alberich Dries" -> "Dries Historical Catalog first published"
+"Dries Historical Catalog first published" -> 5245 [dir="both" color="red"]
+"death of Alberich Dries" -> 5261 [dir="both" color="red"]
+"birth of B'shin" -> "Operation Aurora" -> "death of B'shin"
+
+# [[Druniad]]
+"Last contact with Druniad" -> "Druniad offers Jun-fruit" [dir="both"]
+"Last contact with Druniad" -> "activation of First Nova Generator" [label="short"]
+"construction of First Nova Generator" -> "activation of First Nova Generator" -> "disappearance of First Nova Generator"
+"disappearance of First Nova Generator" -> "White Flower Dreaming" [label="> 50"]
+
+# [[Duplicity Paradox]]
+
+# [[Duskstar Citadel]]
+"birth of Voron Belthaszar" -> "Planet Maker proposes Duskstar Citadel" -> "death of Voron Belthaszar"
+"Planet Maker proposes Duskstar Citadel" -> "Duskstar Citadel construction complete"
+"Duskstar Citadel construction complete" -> 5239 [dir="both" color="red"]
+"Duskstar Citadel dismantled" -> 5244 [dir="both" color="red"]
+"information on Wailing Daughters released" -> 5273 [dir="both" color="red"]
+
+# [[Dust Men]]
+"first encouter with Dust Men" -> "Logomere returns from Hermes Cluster" [dir="both"]
+"construction of First Nova Generator" -> "expansion of First Nova Generator" -> "disappearance of First Nova Generator"
+"Logomere returns from Hermes Cluster" -> "expansion of First Nova Generator" [label="months"]
+"development of Fangalexia" -> "first encouter with Dust Men"
+"expansion of First Nova Generator" -> "increased Dust Men sightings"
+"birth of Mulcifer Sanguinate" -> "increased Dust Men sightings" -> "death of Mulcifer Sanguinate"
+"birth of Elgani Bariarch" -> "increased Dust Men sightings" -> "death of Elgani Bariarch"
+"dest NG3" -> "Dust Men rendered corporeal" [label="very short"]
+"increased Dust Men sightings" -> "Dust Men rendered corporeal"
+
+# [[Ratan Dutrilik]]
+"birth of Ratan Dutrilik" -> 5230 [dir="both" color="red"]
+"birth of Ratan Dutrilik" -> "Battle of Kriinkok"
+#"birth of Ratan Dutrilik" -> "Ratan Dutrilik" -> "death of Ratan Dutrilik"
+
 
 
 # specific years mentioned
 
-1779->1861->4456->5231->5238->5241->5242->5261->5296->5291->5301->6784->7850 [color="green"]
+1779->1861->4456->5174->5211->5213->5223->5230->5231->5233->5238->5239->5241->5242->5244->5245->5261->5273->5296->5291->5301->6784->7850 [color="green"]
 
 }
