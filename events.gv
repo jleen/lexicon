@@ -1,9 +1,10 @@
 digraph viridia
 {
 // specific years mentioned, and all years within interesting ranges
-1779->1861->2462->2463 [color="green"]
+-550->0->1779->1861->2462->2463 [color="green"]
 2463->2500 [dir="both" color="yellow" label="2463-2499 skipped by calendar"]
-2500->4456->5174->5196->5200 [color="green"]
+2500->3000->3500->4000->4456 [color="green"]
+4456->5174->5196->5200 [color="green"]
 5200->5201->5202->5203->5204->5205->5206->5207->5208->5209->5210 [color="green"]
 5210->5211->5212->5213->5214->5215->5216->5217->5218->5219->5220 [color="green"]
 5220->5221->5222->5223->5224->5225->5226->5227->5228->5229->5230 [color="green"]
@@ -14,10 +15,11 @@ digraph viridia
 5270->5271->5272->5273->5274->5275->5276->5277->5278->5279->5280 [color="green"]
 5280->5281->5282->5283->5284->5285->5286->5287->5288->5289->5290 [color="green"]
 5290->5291->5292->5293->5294->5295->5296->5297->5298->5299->5300 [color="green"]
-5300->5301->6784->7850 [color="green"]
+5300->5301->5302->5303->5304->5305->5306->5307->5308->5309->5310 [color="green"]
+5310->5311->5312->5313->5314->5315->5316->5317->5318->5319->5320 [color="green"]
+5320->5357->5386->6784->7204->7850 [color="green"]
 
 "dest NG3" [label="destruction of Third Nova Generator"]
-
 
 // [[Welcome]]
 "dest NG3" -> "start of Parallax Urgency"
@@ -36,11 +38,12 @@ digraph viridia
 
 // [[Adnaimareui]]
 "Malika Core Grid destroyed" [label="spontaneous combustion of Malika Core Grid"]
-"Deorsai Protectorate" -> "Malika Core Grid destroyed" -> "Adnaimareui"
+"Deorsai Protectorate" -> "Malika Core Grid destroyed" -> "emergence of Adnaimareui"
 
 // [[Aleworms]]
-"Tomorrow Hive introduces Aleworms" -> "Parliament of Worlds fails to regulate Aleworms"
-"Parliament of Worlds created" -> "Parliament of Worlds fails to regulate Aleworms"
+"Parliament-Aleworms" [label="Parliament of Worlds\nfails to regulate Aleworms"]
+"Tomorrow Hive introduces Aleworms" -> "Parliament-Aleworms"
+"Parliament of Worlds created" -> "Parliament-Aleworms"
 
 // [[Almnetic Decay]]
 //"collapse of Almnetic Empire"
@@ -48,7 +51,7 @@ digraph viridia
 
 // [[Ambivalence Drive]]
 "birth of Logomere" -> "Logomere returns from Hermes Cluster" -> "death of Logomere"
-"Logomere returns from Hermes Cluster" -> "Mind Plague sweeps Viridia Prime" -> "development of Fangalexia" -> "discovery of Ambivalence Drive in Logomere's ship"
+"Logomere returns from Hermes Cluster" -> "Mind Plague sweeps Viridia Prime" -> "development of Fangalexia" -> "discovery of Ambivalence Drive\nin Logomere's ship"
 
 // [[Apex Station]]
 "Apex Station replaces Exalius Orbital Platform" -> "dest NG3" -> "Operation Aurora"
@@ -57,15 +60,17 @@ digraph viridia
 "Arcological Mania" [label="Arcological Mania grips Viridia Prime"]
 // REVIEW
 "Lesser Stillness" -> "Arcological Mania" [dir="both" color="blue"]
-"Arcological Mania" -> "loss of Duskstar Citadel" [dir="both" color="blue"]
-"Lesser Stillness" -> "loss of Duskstar Citadel" [dir="both" color="blue"]
+// [[Arcological Mania]] references "loss of Duskstar Citadel", but
+// [[Duskstar citadel]] refers to it as "Duskstar Citadel dismantled"
+"Arcological Mania" -> "Duskstar Citadel dismantled" [dir="both" color="blue"]
+"start of Lesser Stillness" -> "Duskstar Citadel dismantled"
 
 "Lesser Stillness" -> "Elsoni Starsnare still in operation"
 "Arcological Mania" -> "Elsoni Starsnare still in operation"
 "loss of Duskstar Citadel" -> "Elsoni Starsnare still in operation"
 
 // [[Arcturianism]]
-"Arcturia emerges" [label="Arcturia emerges from Bkmma bearing Gar'tor'at Prophecy"]
+"Arcturia emerges" [label="Arcturia emerges from Bkmma\nbearing Gar'tor'at Prophecy"]
 "Arcturia emerges" -> "death of Arcturia"
 
 //// Since we now have approximate years for each of these (exact year for
@@ -103,7 +108,7 @@ digraph viridia
 "Elgani Bariarch debates Praetor Valcosa" -> "Viridian independence"
 
 // [[Barometz]]
-"Parliament of Worlds created" -> "Emmanuel Grippe petitions the Parliament of Worlds to expel the Greenlings from Viridia Segunda" -> "Parliament agrees"
+"Parliament of Worlds created" -> "Emmanuel Grippe petitions\nParliament of Worlds to expel\nGreenlings from Viridia Segunda" -> "Parliament of Worlds expels\nGreenlings from Viridia Segunda"
 
 // [[Battle of Kriinkok]]
 "start of Parallax Urgency" -> "Battle of Kriinkok" -> "end of Parallax Urgency"
@@ -118,9 +123,10 @@ digraph viridia
 // [[Bkmma]]
 
 // [[Blank Space]]
+"Cleft opened" [label="The Cleft opened\nfrom Heterochron ship"]
 "Battle of Devil's Nose Asteroid Cluster" -> "Operation Aurora" [label="weeks"]
-"Battle of Devil's Nose Asteroid Cluster" -> "The Cleft opened from Heterochron ship" [dir="both"]
-"Heterochron Technology" -> "The Cleft opened from Heterochron ship"
+"Battle of Devil's Nose Asteroid Cluster" -> "Cleft opened" [dir="both"]
+"Heterochron Technology" -> "Cleft opened"
 
 // [[Boneozard Initiative]]
 "Boneozard Initiative political activities" -> "Arcological Mania"
@@ -141,7 +147,7 @@ digraph viridia
 "theft of Second Nova Generator" -> "dest NG3" [color="cyan" label="assumed"]
 
 // [[Byforalla]]
-"Byforalla founded by Xafane the Inimitable"
+"Byforalla founded" [label="Byforalla founded\nby Xafane the Inimitable"]
 //// "end of Ctjn Empire" turns out to not be a relevent event
 //"Byforalla founded by Xafane the Inimitable" -> "end of Ctjn Empire"
 
@@ -170,7 +176,7 @@ digraph viridia
 // [[Cat and Mouse Problem]]
 
 // [[Chemists' Guild]]
-"Byforalla founded by Xafane the Inimitable" -> "Chemists' Guild formed"
+"Byforalla founded" -> "Chemists' Guild formed"
 "Chemists' Guild formed" -> 4456 [dir="both" color="red"]
 "first Byforalla Chemical Works destroyed" -> 5238 [dir="both" color="red"]
 "development of Fangalexia" -> "first Byforalla Chemical Works destroyed"
@@ -178,16 +184,16 @@ digraph viridia
 //// these lines
 //"first Byforalla Chemical Works destroyed" -> "second Byforalla Chemical Works built" -> "Lesser Stillness ends"
 "second Byforalla Chemical Works built" -> 5241 [dir="both" color="red"]
-"Lesser Stillness starts" -> "Lesser Stillness" -> "Lesser Stillness ends"
+"start of Lesser Stillness" -> "Lesser Stillness" -> "Lesser Stillness ends"
 "Lesser Stillness ends" -> 5242 [dir="both" color="red"]
 //// "end of Ctjn Empire" turns out to not be a relevent event
 //"dest NG3" -> "end of Ctjn Empire"
 
 // [[The Cleft]]
-"Ta'rot'rag Prophecy" -> "The Cleft opened from Heterochron ship" [label="centuries"]
+"Ta'rot'rag Prophecy" -> "Cleft opened" [label="centuries"]
 
 // [[Commodore Lucius Claymore]]
-"birth of Logomere" -> "expedition to Evyl Nebula" -> "Viridia's first encounter with Vermailian Confederacy" -> "Logomere court-martial"
+"birth of Logomere" -> "expedition to Evyl Nebula" -> "Viridia's first encounter with Vermailian Confederacy" -> "Logomere court-martial" -> "death of Logomere"
 "Logomere court-martial" -> "death of Commodore Lucius Claymore" [label="35"]
 "theft of Second Nova Generator" -> "death of Commodore Lucius Claymore" [label="short"]
 "Ta'rot'rag Prophecy"->"Logomere court-martial"
@@ -219,15 +225,22 @@ digraph viridia
 
 
 // [[Darkness Ascending]]
-"birth of Okaki Hontoyo" -> "Darkness Ascending I travels through Blank Space 1st time" -> "Darkness Ascending I attempts travel through Blank Space 2nd time"
-"Darkness Ascending I attempts travel through Blank Space 2nd time" -> "death of Okaki Hontoyo" [dir="both"]
-"Darkness Ascending II" -> "The Cleft opened from Heterochron ship" [dir="both"]
+"DA-I 1st" [label="Darkness Ascending I\ntravels through\nBlank Space 1st time"]
+"DA-I 2nd" [label="Darkness Ascending I\nattempts travel through\nBlank Space 2nd time"]
+"birth of Okaki Hontoyo" -> "DA-I 1st" -> "DA-I 2nd"
+"DA-I 2nd" -> "death of Okaki Hontoyo" [dir="both"]
+
+"general solution to Cat and Mouse Problem" -> "DA-I 1st" [color="cyan" label="assumed"]
+"DA-I 2nd" -> "widespread interstellar commerce" [color="cyan" label="assumed"]
+
+"Darkness Ascending II" -> "Cleft opened" [dir="both"]
 "Darkness Ascending II" -> "General Li'shomay steals Darkness Ascending III"
 "General Li'shomay infested with Baba Tears" -> "General Li'shomay steals Darkness Ascending III" [label="?"]
 "General Li'shomay steals Darkness Ascending III" -> "death of General Li'shomay" [dir="both"]
 
 // [[Deorsai Protectorate]]
 "Deorsai Protectorate founded on Viridia Segunda" -> 5174 [dir="both" color="red"]
+"Deorsai Protectorate founded on Viridia Segunda" -> "Deorsai Protectorate"
 "formation of United Viridian Stellar Defense Forces" -> "Deorsai Protectorate founded on Viridia Segunda" -> "White Flower Dreaming"
 "Dula Jyrexil invents Core Process" -> "Malika Core Grid deployed"
 "Malika Core Grid deployed" -> 5211 [dir="both" color="red"]
@@ -298,9 +311,10 @@ digraph viridia
 "Elsoni Starsnare construction begins" -> "Elsoni Starsnare built"
 
 // [[Emancipation Day]]
-"Sovereignty and Seccession Acts" -> 5274 [dir="both" color="red"]
+"Sovereignty and Secession Acts" -> 5274 [dir="both" color="red"]
 "death of Elgani Bariarch" -> 5284 [dir="both" color="red"]
-"Viridian independence" -> 5274 [dir="both" color="cyan" label="assumed"]
+"Sovereignty and Secession Acts" -> "Viridian independence" [dir="both"]
+"Viridian independence" -> 5274 [dir="both" color="red"]
 
 // [[Endotian Calendar]]
 "Parliament of Worlds created" -> 2500 [dir="both" color="red"]
@@ -314,7 +328,7 @@ digraph viridia
 // [[Erasermind]]
 "disappearance of First Nova Generator" -> "development of Erasermind" -> "theft of Second Nova Generator"
 "development of Erasermind" -> "Jaxpel Project begins"
-"formation of United Viridian Stellar Defense Forces" -> "Jaxpel Project"
+"formation of United Viridian Stellar Defense Forces" -> "Jaxpel Project begins"
 // Jaxpel Project appears to be formed during the rise/height of
 // Logomere's carer
 "birth of Logomere" -> "Jaxpel Project begins" -> "death of Logomere"
@@ -328,6 +342,48 @@ digraph viridia
 // [[Eudaemonism]]
 
 // [[Evyl Nebula]]
+"light of Evyl Nebula supernova\nreaches Viridia Prime" -> 0 [dir="both" color="red"]
 "research into Evyl Nebula" -> "construction of First Nova Generator"
+
+######
+
+
+// [[Face of Hirith]]
+
+// [[Fangalexia]]
+"Mind Plague sweeps Viridia Prime" -> "construction of First Nova Generator"
+
+// [[Duneel Fiorsite]]
+"birth of Duneel Fiorsite" -> 5314 [dir="both" color="red"]
+"death of Duneel Fiorsite" -> 5386 [dir="both" color="red"]
+"Fiorsite Uniform Platform adopted" -> 5357 [dir="both" color="red"]
+"birth of Duneel Fiorsite" -> "Hands Alive social movement begins" -> "death of Duneel Fiorsite"
+"birth of Duneel Fiorsite" -> "Children of the Urgency" -> "death of Duneel Fiorsite"
+
+// [[First Explorers]]
+"earliest record of human activity" -> -550 [dir="both" color="red"]
+"Captain Goodthrust invented\nby Alberich Dries" -> 5250 [dir="both" color="red"]
+
+// [[Flarebird]]
+"SF-19 Flarebird introduced" -> 5264 [dir="both" color="red"]
+"Flarebird fleet sold to Bazrahin" -> 5293 [dir="both" color="red"]
+
+// [[Flodyrion]]
+
+// [[Genevieve Floyd]]
+"birth of Genevieve Floyd" -> "death of Genevieve Floyd"
+"birth of Genevieve Floyd" -> "death of Logomere"
+"birth of Logomere" -> "death of Genevieve Floyd"
+
+// [[Forsithe Preceptors]]
+// text says "after deosai protectorate collapsed", but we know that event
+// as "emergence of the Adnaimareui"
+"Forsithe Preceptors formed" -> "emergence of Adnaimareui" [label="short"]
+"emergence of Adnaimareui" -> "Forsithe Preceptors frozen"
+"Forsithe Preceptors frozen" -> 5260 [dir="both" color="red"]
+"Forsithe Preceptors thawed" -> 7204 [dir="both" color="red"]
+
+######
+
 
 }
