@@ -1,10 +1,11 @@
 digraph viridia
 {
 // specific years mentioned, and all years within interesting ranges
--550->0->1779->1861->2462->2463 [color="green"]
+-550->0->500->1000->1500->1779->1861->2000->2462->2463 [color="green"]
 2463->2500 [dir="both" color="yellow" label="2463-2499 skipped by calendar"]
 2500->3000->3500->4000->4456 [color="green"]
-4456->4500->4821->5000->5174->5195 [color="green"]
+4456->4500->4600->4700->4800->4821->4900->5000 [color="green"]
+5000->5050->5100->5150->5174->5195 [color="green"]
 5195->5196->5197->5198->5199->5200 [color="green"]
 5200->5201->5202->5203->5204->5205->5206->5207->5208->5209->5210 [color="green"]
 5210->5211->5212->5213->5214->5215->5216->5217->5218->5219->5220 [color="green"]
@@ -39,7 +40,9 @@ digraph viridia
 
 // [[Adnaimareui]]
 "Malika Core Grid destroyed" [label="spontaneous combustion of Malika Core Grid"]
-"Deorsai Protectorate" -> "Malika Core Grid destroyed" -> "emergence of Adnaimareui"
+// this is now redundant, since we have specific dates for both events
+//"Deorsai Protectorate founded" -> "Malika Core Grid destroyed"
+"Malika Core Grid destroyed" -> "emergence of Adnaimareui"
 
 // [[Aleworms]]
 "Parliament-Aleworms" [label="Parliament of Worlds\nfails to regulate Aleworms"]
@@ -95,7 +98,8 @@ digraph viridia
 
 
 // [[B'shin]]
-"formation of United Viridian Stellar Defense Forces" -> "B'shin in UVSDF"
+"UVSDF forms" [label="formation of\nUnited Viridian\nStellar Defense Forces"]
+"UVSDF forms" -> "B'shin in UVSDF"
 "birth of B'shin" -> "B'shin in UVSDF" -> "Vermailian Confederacy incursions" -> "B'shin lives among Greenlings" -> "death of B'shin"
 "B'shin lives among Greenlings" -> "Flodyrion"
 
@@ -109,7 +113,8 @@ digraph viridia
 "Elgani Bariarch debates Praetor Valcosa" -> "Viridian independence"
 
 // [[Barometz]]
-"Parliament of Worlds created" -> "Emmanuel Grippe petitions\nParliament of Worlds to expel\nGreenlings from Viridia Segunda" -> "Parliament of Worlds expels\nGreenlings from Viridia Segunda"
+"greenlings expelled" [label="As Emmanuel Grippe petitions,\nParliament of Worlds expels\nGreenlings from Viridia Segunda"]
+"Parliament of Worlds created" -> "greenlings expelled"
 
 // [[Battle of Kriinkok]]
 "start of Parallax Urgency" -> "Battle of Kriinkok" -> "end of Parallax Urgency"
@@ -147,6 +152,8 @@ digraph viridia
 //"disappearance of First Nova Generator" -> "theft of Second Nova Generator" [color="cyan" label="assumed"]
 "theft of Second Nova Generator" -> "dest NG3" [color="cyan" label="assumed"]
 
+"disappearance of First Nova Generator" -> "activation of Second Nova Generator" [color="cyan" label="assumed"]
+
 // [[Byforalla]]
 "Byforalla founded" [label="Byforalla founded\nby Xafane the Inimitable"]
 //// "end of Ctjn Empire" turns out to not be a relevent event
@@ -157,11 +164,11 @@ digraph viridia
 
 // [[Pylus Caldran]]
 "birth of Pylus Caldran" -> 5231 [dir="both" color="red"]
-"death of Pylus Caldran" -> 5301 [dir="both" color="red"]
+5301 -> "death of Pylus Caldran" [dir="both" color="red"]
 //// reporting Caldran's age is redundant with his birth and death year;
 //// simplify graph by not including this line
 //"birth of Pylus Caldran" -> "death of Pylus Caldran" [label="70"]
-"death of Arcturia" -> 1861 [dir="both" label="approx" color="blue"]
+1861 -> "death of Arcturia" [dir="both" label="approx" color="blue"]
 //// reporting Caldran's birth occured before dest NG3 is now redundant
 //"birth of Pylus Caldran" -> "dest NG3"
 //// We have exact dates for these, so reporting 10 years is redundant
@@ -171,24 +178,24 @@ digraph viridia
 //"sack of Gul Arcturis Spicu" -> "death of Pylus Caldran"
 
 //// via calculating that dest NG3 = "death of Pylus Caldran" - 10 years
-"dest NG3" -> 5291 [dir="both" color="red"]
-"End of Gar'tor'at Prophecy" -> 6784 [dir="both" label="approx" color="blue"]
+5291 -> "dest NG3" [dir="both" color="red"]
+6784 -> "End of Gar'tor'at Prophecy" [dir="both" label="approx" color="blue"]
 "Arcturia emerges" -> 1779 [dir="both" label="approx" color="blue"]
-"disappearance of First Nova Generator" -> 5241 [dir="both" color="red"]
+5241 -> "disappearance of First Nova Generator" [dir="both" color="red"]
 
 // [[Cat and Mouse Problem]]
 
 // [[Chemists' Guild]]
 "Byforalla founded" -> "Chemists' Guild formed"
 "Chemists' Guild formed" -> 4456 [dir="both" color="red"]
-"first Byforalla Chemical Works destroyed" -> 5238 [dir="both" color="red"]
+5238 -> "first Byforalla Chemical Works destroyed" [dir="both" color="red"]
 "development of Fangalexia" -> "first Byforalla Chemical Works destroyed"
 //// We have specific years for each of these events, so we don't need
 //// these lines
 //"first Byforalla Chemical Works destroyed" -> "second Byforalla Chemical Works built" -> "Lesser Stillness ends"
 "second Byforalla Chemical Works built" -> 5241 [dir="both" color="red"]
 "start of Lesser Stillness" -> "Lesser Stillness" -> "Lesser Stillness ends"
-"Lesser Stillness ends" -> 5242 [dir="both" color="red"]
+5242 -> "Lesser Stillness ends" [dir="both" color="red"]
 //// "end of Ctjn Empire" turns out to not be a relevent event
 //"dest NG3" -> "end of Ctjn Empire"
 
@@ -204,7 +211,7 @@ digraph viridia
 // [[Conclave of Mek'ril]]
 // REVIEW
 "begin Conclave of Mek'ril peak of influence" -> 5261 [dir="both" color="red"]
-"end Conclave of Mek'ril peak of influence" -> 5296 [dir="both" color="red"]
+5296 -> "end Conclave of Mek'ril peak of influence" [dir="both" color="red"]
 "begin Conclave of Mek'ril peak of influence" -> "Conclave of Mek'ril" -> "end Conclave of Mek'ril peak of influence"
 
 //"Conclave of Mek'ril" -> "Ratan Dutrilik" [dir="both" color="blue"]
@@ -222,7 +229,7 @@ digraph viridia
 // Parallax Urgency, but most of these were much earlier
 
 // [[Ctjn Empire]]
-"Viridian independence" -> "Ctjn Empire gains control over Viridia Prime" -> "United People's Revolutionary Confederacy of Free Rocks"
+"Viridian independence" -> "Ctjn Empire gains control over Viridia Prime" -> "United People's\nRevolutionary Confederacy\nof Free Rocks"
 
 ######
 
@@ -242,12 +249,13 @@ digraph viridia
 "General Li'shomay steals Darkness Ascending III" -> "death of General Li'shomay" [dir="both"]
 
 // [[Deorsai Protectorate]]
-"Deorsai Protectorate founded on Viridia Segunda" -> 5174 [dir="both" color="red"]
-"Deorsai Protectorate founded on Viridia Segunda" -> "Deorsai Protectorate"
-"formation of United Viridian Stellar Defense Forces" -> "Deorsai Protectorate founded on Viridia Segunda" -> "White Flower Dreaming"
+"Deorsai Protectorate founded" [label="Deorsai Protectorate founded\non Viridia Segunda"]
+"Deorsai Protectorate founded" -> 5174 [dir="both" color="red"]
+//"Deorsai Protectorate founded" -> "Deorsai Protectorate"
+"UVSDF forms" -> "Deorsai Protectorate founded" -> "White Flower Dreaming"
 "Dula Jyrexil invents Core Process" -> "Malika Core Grid deployed"
 "Malika Core Grid deployed" -> 5211 [dir="both" color="red"]
-"Malika Core Grid destroyed" -> 5213 [dir="both" color="red"]
+5213 -> "Malika Core Grid destroyed" [dir="both" color="red"]
 //"Malika Core Grid deployed" -> "Malika Core Grid destroyed"
 "Malika Core Grid deployed" -> "Nova Entity"
 // Text is: "within the next decade" from 5213
@@ -256,8 +264,8 @@ digraph viridia
 
 // [[Dries Historical Catalog]]
 "birth of Alberich Dries" -> "Dries Historical Catalog first published"
-"Dries Historical Catalog first published" -> 5245 [dir="both" color="red"]
-"death of Alberich Dries" -> 5261 [dir="both" color="red"]
+5245 -> "Dries Historical Catalog first published" [dir="both" color="red"]
+5261 -> "death of Alberich Dries" [dir="both" color="red"]
 "birth of B'shin" -> "Operation Aurora" -> "death of B'shin"
 
 // [[Druniad]]
@@ -272,8 +280,8 @@ digraph viridia
 "birth of Voron Belthaszar" -> "Planet Maker proposes Duskstar Citadel" -> "death of Voron Belthaszar"
 "Planet Maker proposes Duskstar Citadel" -> "Duskstar Citadel construction complete"
 "Duskstar Citadel construction complete" -> 5239 [dir="both" color="red"]
-"Duskstar Citadel dismantled" -> 5244 [dir="both" color="red"]
-"information on Wailing Daughters released" -> 5273 [dir="both" color="red"]
+5244 -> "Duskstar Citadel dismantled" [dir="both" color="red"]
+5273 -> "information on Wailing Daughters released" [dir="both" color="red"]
 
 // [[Dust Men]]
 "first encouter with Dust Men" -> "Logomere returns from Hermes Cluster" [dir="both"]
@@ -292,7 +300,7 @@ digraph viridia
 "increased Dust Men sightings" -> "Dust Men rendered corporeal"
 
 // [[Ratan Dutrilik]]
-"birth of Ratan Dutrilik" -> 5230 [dir="both" color="red"]
+5230 -> "birth of Ratan Dutrilik" [dir="both" color="red"]
 "birth of Ratan Dutrilik" -> "Battle of Kriinkok"
 //"birth of Ratan Dutrilik" -> "Ratan Dutrilik" -> "death of Ratan Dutrilik"
 
@@ -315,13 +323,13 @@ digraph viridia
 
 // [[Emancipation Day]]
 "Sovereignty and Secession Acts" -> 5274 [dir="both" color="red"]
-"death of Elgani Bariarch" -> 5284 [dir="both" color="red"]
+5284 -> "death of Elgani Bariarch" [dir="both" color="red"]
 "Sovereignty and Secession Acts" -> "Viridian independence" [dir="both"]
-"Viridian independence" -> 5274 [dir="both" color="red"]
+5274 -> "Viridian independence" [dir="both" color="red"]
 
 // [[Endotian Calendar]]
 "Parliament of Worlds created" -> 2500 [dir="both" color="red"]
-"Port Authority of Sector 17" -> "Parliament of Worlds created" [dir="both"]
+"Port Authority of Sector 17" -> "Parliament of Worlds created"
 "Parliament of Worlds created" -> "Almnetic Decay"
 "Vermailian Confederacy formed" -> "Parliament of Worlds created"
 "Omniscium Wherescape formed" -> "Parliament of Worlds created"
@@ -331,7 +339,7 @@ digraph viridia
 // [[Erasermind]]
 "disappearance of First Nova Generator" -> "development of Erasermind" -> "theft of Second Nova Generator"
 "development of Erasermind" -> "Jaxpel Project begins"
-"formation of United Viridian Stellar Defense Forces" -> "Jaxpel Project begins"
+"UVSDF forms" -> "Jaxpel Project begins"
 // Jaxpel Project appears to be formed during the rise/height of
 // Logomere's carer
 "birth of Logomere" -> "Jaxpel Project begins" -> "death of Logomere"
@@ -340,12 +348,12 @@ digraph viridia
 // [[Estyrian Conflict]]
 "Parliament of Worlds created" -> "Estyria joins Parliament of Worlds" -> 5264
 "Estyrian Conflict begins" -> 5264 [dir="both" label="approx" color="blue"]
-"Estyrian Conflict ends" -> 5267 [dir="both" label="approx" color="blue"]
+5267 -> "Estyrian Conflict ends" [dir="both" label="approx" color="blue"]
 
 // [[Eudaemonism]]
 
 // [[Evyl Nebula]]
-"light of Evyl Nebula supernova\nreaches Viridia Prime" -> 0 [dir="both" color="red"]
+0 -> "light of Evyl Nebula supernova\nreaches Viridia Prime" [dir="both" color="red"]
 "research into Evyl Nebula" -> "construction of First Nova Generator"
 
 ######
@@ -358,18 +366,18 @@ digraph viridia
 
 // [[Duneel Fiorsite]]
 "birth of Duneel Fiorsite" -> 5314 [dir="both" color="red"]
-"death of Duneel Fiorsite" -> 5386 [dir="both" color="red"]
-"Fiorsite Uniform Platform adopted" -> 5357 [dir="both" color="red"]
+5386 -> "death of Duneel Fiorsite" [dir="both" color="red"]
+5357 -> "Fiorsite Uniform\nPlatform adopted" [dir="both" color="red"]
 "birth of Duneel Fiorsite" -> "Hands Alive social movement begins" -> "death of Duneel Fiorsite"
 "birth of Duneel Fiorsite" -> "Children of the Urgency" -> "death of Duneel Fiorsite"
 
 // [[First Explorers]]
-"earliest record of human activity" -> -550 [dir="both" color="red"]
-"Captain Goodthrust invented\nby Alberich Dries" -> 5250 [dir="both" color="red"]
+-550 -> "earliest record of human activity" [dir="both" color="red"]
+5250 -> "Captain Goodthrust invented\nby Alberich Dries" [dir="both" color="red"]
 
 // [[Flarebird]]
-"SF-19 Flarebird introduced" -> 5264 [dir="both" color="red"]
-"Flarebird fleet sold to Bazrahin" -> 5293 [dir="both" color="red"]
+5264 -> "SF-19 Flarebird introduced" [dir="both" color="red"]
+5293 -> "Flarebird fleet sold to Bazrahin" [dir="both" color="red"]
 
 // [[Flodyrion]]
 
@@ -383,22 +391,19 @@ digraph viridia
 // as "emergence of the Adnaimareui"
 "Forsithe Preceptors formed" -> "emergence of Adnaimareui" [label="short"]
 "emergence of Adnaimareui" -> "Forsithe Preceptors frozen"
-"Forsithe Preceptors frozen" -> 5260 [dir="both" color="red"]
-"Forsithe Preceptors thawed" -> 7204 [dir="both" color="red"]
+5260 -> "Forsithe Preceptors frozen" [dir="both" color="red"]
+7204 -> "Forsithe Preceptors thawed" [dir="both" color="red"]
 
 ######
 
 
 // [[Gar'tor'at Prophecy]]
-"Friday, 16 Thermidor, 4821\nPartly cloudy, cool and mild, high of 58" -> 4821 [dir="both" color="red"]
-"Friday, 16 Thermidor, 4821\nVice-Chairman Ossifay is assassinated by T'ltssk separatists" -> 4821 [dir="both" color="red"]
-"Friday, 16 Thermidor, 4821\nTigers take Falcons 16-7 and proceed to playoffs" -> 4821 [dir="both" color="red"]
-"Friday, 16 Thermidor, 4821\nTODAY IS CASUAL DAY.\nJeans, khakis and long-sleeved tees are casual;\nshorts, sandals and tank tops are not" -> 4821 [dir="both" color="red"]
+4821 -> "Friday, 16 Thermidor, 4821\nPartly cloudy, cool and mild, high of 58.\nVice-Chairman Ossifay is assassinated by T'ltssk separatists.\nTigers take Falcons 16-7 and proceed to playoffs.\nTODAY IS CASUAL DAY. Jeans, khakis and long-sleeved tees are casual; shorts, sandals and tank tops are not." [dir="both" color="red"]
 
-"Tuesday, 21 Brumaire, 5248.\n[REDACTED] continues to plot against [REDACTED]; be warned.\nIn time this will lead to [REDACTED].\nChronal dislocation setting in, most likely stemming from [REDACTED].\nThis [REDACTED] will not [REDACTED] [REDACTED]." -> 5248 [dir="both" color="red"]
+5248 -> "Tuesday, 21 Brumaire, 5248.\n[REDACTED] continues to plot against [REDACTED]; be warned.\nIn time this will lead to [REDACTED].\nChronal dislocation setting in, most likely stemming from [REDACTED].\nThis [REDACTED] will not [REDACTED] [REDACTED]." [dir="both" color="red"]
 
 "clerics protest" [label="dissident clerics called on\nCollege of Oracles to abandon\nGar'tor'at"]
-"clerics protest" -> 5259 [dir="both" color="red"]
+5259 -> "clerics protest" [dir="both" color="red"]
 "clerics protest" -> "dissident clerics executed for heresy"
 
 // [[Genegineering]]
@@ -413,11 +418,11 @@ digraph viridia
 // article not yet written
 
 // [[Emmanuel Grippe]]
-"Parliament of Worlds expels\nGreenlings from Viridia Segunda" -> 5243 [dir="both" color="red"]
+5243 -> "greenlings expelled" [dir="both" color="red"]
 5300 -> "death of Emmanuel Grippe"
 
 // [[Gul Arcturis Spicu]]
-"sack of Gul Arcturis Spicu" -> 5294 [dir="both" color="red"]
+5294 -> "sack of Gul Arcturis Spicu" [dir="both" color="red"]
 "Arcturia emerges" -> "Gul Arcturis Spicu formed" -> "death of Arcturia"
 
 }
