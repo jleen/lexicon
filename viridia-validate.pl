@@ -402,6 +402,7 @@ sub init()
                 'Dries Historical Catalog',
                 'Druniad',
                 'Erasermind',
+                'Garott Ornati',
                 'Intoa',
                 'No-Nothing',
                 'Orsinder',
