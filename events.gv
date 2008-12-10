@@ -19,7 +19,7 @@ digraph viridia
 5290->5291->5292->5293->5294->5295->5296->5297->5298->5299->5300 [color="green"]
 5300->5301->5302->5303->5304->5305->5306->5307->5308->5309->5310 [color="green"]
 5310->5311->5312->5313->5314->5315->5316->5317->5318->5319->5320 [color="green"]
-5320->5357->5386->6784->7204->7850 [color="green"]
+5320->5357->5386->6782->6784->7204->7850 [color="green"]
 
 "dest NG3" [label="destruction of Third Nova Generator"]
 
@@ -113,7 +113,7 @@ digraph viridia
 "Elgani Bariarch debates Praetor Valcosa" -> "Viridian independence"
 
 // [[Barometz]]
-"greenlings expelled" [label="As Emmanuel Grippe petitions,\nParliament of Worlds expels\nGreenlings from Viridia Segunda"]
+"greenlings expelled" [label="As Emmanuel Grippe petitions,\nParliament of Worlds expels\nGreenlings from Viridia Segunda\n(or not expelled?)"]
 "Parliament of Worlds created" -> "greenlings expelled"
 
 // [[Battle of Kriinkok]]
@@ -406,6 +406,9 @@ digraph viridia
 5259 -> "clerics protest" [dir="both" color="red"]
 "clerics protest" -> "dissident clerics executed for heresy"
 
+// [[Garott Ornati]]
+6782 -> "Hegemonic Purge" [dir="both" color="red"]
+
 // [[Genegineering]]
 "meeting of Gul Arcturis Spicu\nto create Genegineering" -> 5212 [dir="both" color="red"]
 
@@ -415,7 +418,7 @@ digraph viridia
 "end Conclave of Mek'ril peak of influence" -> "death of Yeohna Gillean"
 
 //[[Greenlings]]
-// article not yet written
+5280 -> "White Flower Dreaming" [dir="both" color="red"]
 
 // [[Emmanuel Grippe]]
 5243 -> "greenlings expelled" [dir="both" color="red"]
