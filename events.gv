@@ -1,11 +1,19 @@
 digraph viridia
 {
-// specific years mentioned, and all years within interesting ranges
--550->0->500->1000->1500->1779->1861->2000->2462->2463 [color="green"]
+// specific years mentioned, and all years within interesting ranges; use
+// "green" for adjacent years and a different shade and a double line when
+// we skip years; since we use "red" for specifying exact years, we use
+// yellow (green + red) for the year numbers which are the same
+-550->0->500->1000->1500->1779->1861->2000->2462 [color="seagreen4"]
+-550->0->500->1000->1500->1779->1861->2000->2462 [color="seagreen4"]
+2462->2463 [color="green"]
 2463->2500 [dir="both" color="yellow" label="2463-2499 skipped by calendar"]
-2500->3000->3500->4000->4456 [color="green"]
-4456->4500->4600->4700->4800->4821->4900->5000 [color="green"]
-5000->5050->5100->5150->5174->5195 [color="green"]
+2500->3000->3500->4000->4456 [color="seagreen4"]
+2500->3000->3500->4000->4456 [color="seagreen4"]
+4456->4500->4600->4700->4800->4821->4900->5000 [color="seagreen4"]
+4456->4500->4600->4700->4800->4821->4900->5000 [color="seagreen4"]
+5000->5050->5100->5150->5174->5195 [color="seagreen4"]
+5000->5050->5100->5150->5174->5195 [color="seagreen4"]
 5195->5196->5197->5198->5199->5200 [color="green"]
 5200->5201->5202->5203->5204->5205->5206->5207->5208->5209->5210 [color="green"]
 5210->5211->5212->5213->5214->5215->5216->5217->5218->5219->5220 [color="green"]
@@ -20,7 +28,12 @@ digraph viridia
 5300->5301->5302->5303->5304->5305->5306->5307->5308->5309->5310 [color="green"]
 5310->5311->5312->5313->5314->5315->5316->5317->5318->5319->5320 [color="green"]
 5320->5321->5322->5323->5324->5325->5326->5327->5328->5329->5330 [color="green"]
-5330->5357->5386->6782->6784->7204->7850 [color="green"]
+5330->5340->5350->5357->5360->5370->5380->5386->5390->5400 [color="seagreen4"]
+5330->5340->5350->5357->5360->5370->5380->5386->5390->5400 [color="seagreen4"]
+5400->5450->5500->6000->6500->6782->7000 [color="seagreen4"]
+5400->5450->5500->6000->6500->6782->7000 [color="seagreen4"]
+7000->7204->7500->7850->"now" [color="seagreen4"]
+7000->7204->7500->7850->"now" [color="seagreen4"]
 
 "dest NG3" [label="destruction of Third Nova Generator"]
 
@@ -59,7 +72,9 @@ digraph viridia
 "Logomere returns from Hermes Cluster" -> "Mind Plague sweeps Viridia Prime" -> "development of Fangalexia" -> "discovery of Ambivalence Drive\nin Logomere's ship"
 
 // [[Apex Station]]
-"Apex Station replaces Exalius Orbital Platform" -> "dest NG3" -> "Operation Aurora"
+"Apex Station replaces Exalius Orbital Platform" -> "dest NG3"
+// [[Hands Alive]] gives us a date for OA, so this is redundant:
+// "dest NG3" -> "Operation Aurora"
 
 // [[Arcological Mania]]
 "Arcological Mania" [label="Arcological Mania grips Viridia Prime"]
@@ -85,7 +100,6 @@ digraph viridia
 
 //"Arcturia emerges" -> "dest NG3" [label="~3500" color="blue"]
 //"dest NG3" -> "End of Gar'tor'at Prophecy" [label="~1500" color="blue"]
-7850 -> "now" [color="green"]
 
 // [[Artifacturals]]
 "Artifacturals spliter from First Explorers" -> "Artifacturals enter Bkmma and disappear"
@@ -139,6 +153,9 @@ digraph viridia
 
 // [[Blank Space]]
 "Cleft opened" [label="The Cleft opened\nfrom Heterochron ship"]
+// [[Hands Alive]] gives us the date for OA, and we know BoD'sNAC was only
+// weeks earlier
+"Battle of Devil's Nose Asteroid Cluster" -> 5298 [dir="both" color="red"]
 "Battle of Devil's Nose Asteroid Cluster" -> "Operation Aurora" [label="weeks"]
 "Battle of Devil's Nose Asteroid Cluster" -> "Cleft opened" [dir="both"]
 "Heterochron Technology" -> "Cleft opened"
@@ -323,7 +340,7 @@ digraph viridia
 "increased Dust Men sightings" -> "Dust Men rendered corporeal"
 
 // [[Ratan Dutrilik]]
-5230 -> "birth of Ratan Dutrilik" [dir="both" color="red"]
+"birth of Ratan Dutrilik" -> 5230 [dir="both" color="red"]
 "birth of Ratan Dutrilik" -> "Battle of Kriinkok"
 //"birth of Ratan Dutrilik" -> "Ratan Dutrilik" -> "death of Ratan Dutrilik"
 
@@ -425,7 +442,7 @@ digraph viridia
 
 
 // [[Gar'tor'at Prophecy]]
-4821 -> "Friday, 16 Thermidor, 4821\nPartly cloudy, cool and mild, high of 58.\nVice-Chairman Ossifay is assassinated by T'ltssk separatists.\nTigers take Falcons 16-7 and proceed to playoffs.\nTODAY IS CASUAL DAY. Jeans, khakis and long-sleeved tees are casual; shorts, sandals and tank tops are not." [dir="both" color="red"]
+4821 -> "Friday, 16 Thermidor, 4821\nPartly cloudy, cool and mild, high of 58.\nVice-Chairman Ossifay is assassinated by T'ltssk separatists.\nTigers take Falcons 16-7 and proceed to playoffs.\nTODAY IS CASUAL DAY. Jeans, khakis and long-sleeved tees are casual;\nshorts, sandals and tank tops are not." [dir="both" color="red"]
 
 5248 -> "Tuesday, 21 Brumaire, 5248.\n[REDACTED] continues to plot against [REDACTED]; be warned.\nIn time this will lead to [REDACTED].\nChronal dislocation setting in, most likely stemming from [REDACTED].\nThis [REDACTED] will not [REDACTED] [REDACTED]." [dir="both" color="red"]
 
@@ -441,7 +458,8 @@ digraph viridia
 
 // [[Yeohna Gilean]]
 "birth of Yeohna Gilean" -> 5256 [dir="both" color="red"]
-"birth of Yeohna Gilean" -> "Operation Aurora"
+// [[Hands Alive]] gives us an exact date for OA, so this is redundant:
+//"birth of Yeohna Gilean" -> "Operation Aurora"
 "end Conclave of Mek'ril peak of influence" -> "death of Yeohna Gillean"
 
 //[[Greenlings]]
@@ -458,6 +476,7 @@ digraph viridia
 ######
 
 // [[Hands Alive]]
+5298 -> "Operation Aurora" [dir="both" color="red"]
 
 // [[Hegemonic Purge]]
 6782 -> "End of Gar'tor'at Prophecy" [dir="both" color="red"]
@@ -472,7 +491,7 @@ digraph viridia
 5318 -> "Truth and Reconsiliation hearing" [dir="both" color="red"]
 5317 -> "Heterochron Society ordered disbanded" [dir="both" color="red"]
 // yes this is "OA is before 5317"; I did not forget the dir="both", etc
-"Operation Aurora" -> 5317
+//"Operation Aurora" -> 5317
 
 // [[Hirith]]
 
