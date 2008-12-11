@@ -19,7 +19,8 @@ digraph viridia
 5290->5291->5292->5293->5294->5295->5296->5297->5298->5299->5300 [color="green"]
 5300->5301->5302->5303->5304->5305->5306->5307->5308->5309->5310 [color="green"]
 5310->5311->5312->5313->5314->5315->5316->5317->5318->5319->5320 [color="green"]
-5320->5357->5386->6782->6784->7204->7850 [color="green"]
+5320->5321->5322->5323->5324->5325->5326->5327->5328->5329->5330 [color="green"]
+5330->5357->5386->6782->6784->7204->7850 [color="green"]
 
 "dest NG3" [label="destruction of Third Nova Generator"]
 
@@ -75,7 +76,9 @@ digraph viridia
 
 // [[Arcturianism]]
 "Arcturia emerges" [label="Arcturia emerges from Bkmma\nbearing Gar'tor'at Prophecy"]
-"Arcturia emerges" -> "death of Arcturia"
+// This line is redundant (due to having approximate years and due to
+// having "Gul Arcturis Spicu formed" between them)
+//"Arcturia emerges" -> "death of Arcturia"
 
 //// Since we now have approximate years for each of these (exact year for
 //// dest NG3), we no long need the lines indicating duration
@@ -109,12 +112,18 @@ digraph viridia
 // [[Elgani Bariarch]]
 "Almnetic Decay" -> "death of Elgani Bariarch"
 "birth of Praetor Valcosa" -> "Elgani Bariarch debates Praetor Valcosa" -> "death of Praetor Valcosa"
-"birth of Elgani Bariarch" -> "Elgani Bariarch debates Praetor Valcosa" -> "death of Elgani Bariarch"
+"birth of Elgani Bariarch" -> "Elgani Bariarch debates Praetor Valcosa"
+// We have a date for Bariarch's death, and a date for an event following
+// the debates (that of Viridian Independence), making this line
+// redundant:
+//"Elgani Bariarch debates Praetor Valcosa" -> "death of Elgani Bariarch"
 "Elgani Bariarch debates Praetor Valcosa" -> "Viridian independence"
 
 // [[Barometz]]
 "greenlings expelled" [label="As Emmanuel Grippe petitions,\nParliament of Worlds expels\nGreenlings from Viridia Segunda\n(or not expelled?)"]
-"Parliament of Worlds created" -> "greenlings expelled"
+// This line is redundant as we now have exact dates for each of these
+// from [[Endotian Calendar]] and [[Emmanuel Grippe]]
+//"Parliament of Worlds created" -> "greenlings expelled"
 
 // [[Battle of Kriinkok]]
 "start of Parallax Urgency" -> "Battle of Kriinkok" -> "end of Parallax Urgency"
@@ -179,7 +188,8 @@ digraph viridia
 
 //// via calculating that dest NG3 = "death of Pylus Caldran" - 10 years
 5291 -> "dest NG3" [dir="both" color="red"]
-6784 -> "End of Gar'tor'at Prophecy" [dir="both" label="approx" color="blue"]
+// we now have an exact date for this in [[Hegemonic Purge]]
+//6784 -> "End of Gar'tor'at Prophecy" [dir="both" label="approx" color="blue"]
 "Arcturia emerges" -> 1779 [dir="both" label="approx" color="blue"]
 5241 -> "disappearance of First Nova Generator" [dir="both" color="red"]
 
@@ -219,8 +229,14 @@ digraph viridia
 "Conclave of Mek'ril" -> "Cerys Irolat" [dir="both" color="blue"]
 
 // [[Core Process]]
-"Achronic Inverter invented by Dula Jyrexil" -> "Dula Jyrexil invents Core Process" -> "construction of First Nova Generator"
-"Dula Jyrexil invents Core Process" -> "Eloi Farms created on Viridia Prime"
+"Achronic Inverter invented by Dula Jyrexil" -> "Dula Jyrexil invents Core Process"
+// We have a latest date for "invents core process" and a range of
+// possible dates for "construction of NG1", so this line is redundant
+//"Dula Jyrexil invents Core Process" -> "construction of First Nova Generator"
+// This line is redundant because we now have a date for the creation of
+// the Farms, and know the invention was before a known date before the
+// Farms
+//"Dula Jyrexil invents Core Process" -> "Eloi Farms created on Viridia Prime"
 
 // [[Crilinka]]
 "start of Parallax Urgency" -> "Crilinka"
@@ -240,8 +256,10 @@ digraph viridia
 "birth of Okaki Hontoyo" -> "DA-I 1st" -> "DA-I 2nd"
 "DA-I 2nd" -> "death of Okaki Hontoyo" [dir="both"]
 
-"general solution to Cat and Mouse Problem" -> "DA-I 1st" [color="cyan" label="assumed"]
-"DA-I 2nd" -> "widespread interstellar commerce" [color="cyan" label="assumed"]
+// [[Okaki Hontoyo]] places DA-I in the lifetime of Claymore, thousands of
+// years after we believed based on reading [[Darkness Ascending]]
+//"general solution to Cat and Mouse Problem" -> "DA-I 1st" [color="cyan" label="assumed"]
+//"DA-I 2nd" -> "widespread interstellar commerce" [color="cyan" label="assumed"]
 
 "Darkness Ascending II" -> "Cleft opened" [dir="both"]
 "Darkness Ascending II" -> "General Li'shomay steals Darkness Ascending III"
@@ -252,7 +270,9 @@ digraph viridia
 "Deorsai Protectorate founded" [label="Deorsai Protectorate founded\non Viridia Segunda"]
 "Deorsai Protectorate founded" -> 5174 [dir="both" color="red"]
 //"Deorsai Protectorate founded" -> "Deorsai Protectorate"
-"UVSDF forms" -> "Deorsai Protectorate founded" -> "White Flower Dreaming"
+"UVSDF forms" -> "Deorsai Protectorate founded"
+// This line is now redundant, as [[Greenlings]] gives an exact date for WFD
+//"Deorsai Protectorate founded" -> "White Flower Dreaming"
 "Dula Jyrexil invents Core Process" -> "Malika Core Grid deployed"
 "Malika Core Grid deployed" -> 5211 [dir="both" color="red"]
 5213 -> "Malika Core Grid destroyed" [dir="both" color="red"]
@@ -272,7 +292,10 @@ digraph viridia
 "Last contact with Druniad" -> "Druniad offers Jun-fruit" [dir="both"]
 "Last contact with Druniad" -> "activation of First Nova Generator" [label="short"]
 "construction of First Nova Generator" -> "activation of First Nova Generator" -> "disappearance of First Nova Generator"
-"disappearance of First Nova Generator" -> "White Flower Dreaming" [label="> 50"]
+// This line is now redundant as we have exact dates for both of these
+// events (although they are only 39 years, NOT greater than 50 years
+// apart.
+//"disappearance of First Nova Generator" -> "White Flower Dreaming" [label="> 50"]
 
 // [[Duplicity Paradox]]
 
@@ -339,7 +362,11 @@ digraph viridia
 // [[Erasermind]]
 "disappearance of First Nova Generator" -> "development of Erasermind" -> "theft of Second Nova Generator"
 "development of Erasermind" -> "Jaxpel Project begins"
-"UVSDF forms" -> "Jaxpel Project begins"
+// We know "Jaxpel Project begins" occurs after "development of
+// Erasermind", which is after "disappearance of NG1" which is 5241.  We
+// know "UVSDF forms" is before "Deorsai Protectorate founded", in 5174.
+// Together, this makes the following line redundant:
+//"UVSDF forms" -> "Jaxpel Project begins"
 // Jaxpel Project appears to be formed during the rise/height of
 // Logomere's carer
 "birth of Logomere" -> "Jaxpel Project begins" -> "death of Logomere"
@@ -427,5 +454,34 @@ digraph viridia
 // [[Gul Arcturis Spicu]]
 5294 -> "sack of Gul Arcturis Spicu" [dir="both" color="red"]
 "Arcturia emerges" -> "Gul Arcturis Spicu formed" -> "death of Arcturia"
+
+######
+
+// [[Hands Alive]]
+
+// [[Hegemonic Purge]]
+6782 -> "End of Gar'tor'at Prophecy" [dir="both" color="red"]
+
+// [[Hermes Cluster]]
+// probably not relevent:
+// "Heremes Cluster is 100 million light-years[sic] younger than the universe itself"
+
+// [[Heterochron]]
+"birth of Valter Qlondike" -> 5318 -> "death of Valter Qlondike"
+// T&R hearing may span more than 1 year
+5318 -> "Truth and Reconsiliation hearing" [dir="both" color="red"]
+5317 -> "Heterochron Society ordered disbanded" [dir="both" color="red"]
+// yes this is "OA is before 5317"; I did not forget the dir="both", etc
+"Operation Aurora" -> 5317
+
+// [[Hirith]]
+
+// [[Lucretius Hom]]
+"birth of Lucretius Hom" -> 5211 [dir="both" color="red"]
+5289 -> "death of Lucretius Hom" [dir="both" color="red"]
+"Lucretius Hom assassinates\nSalvador Nacht (aka Lucretius Hom)" -> 5289 [dir="both" color="red"]
+
+// [[Okaki Hontoyo]]
+"birth of Commodore Lucius Claymore" -> "death of Okaki Hontoyo" -> "death of Commodore Lucius Claymore"
 
 }
