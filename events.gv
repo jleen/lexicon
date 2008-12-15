@@ -8,13 +8,13 @@ digraph viridia
 -550->0->500->1000->1500->1779->1861->2000->2462 [color="seagreen4"]
 2462->2463 [color="green"]
 2463->2500 [dir="both" color="yellow" label="2463-2499 skipped by calendar"]
-2500->3000->3500->4000->4456 [color="seagreen4"]
-2500->3000->3500->4000->4456 [color="seagreen4"]
+2500->2736->3000->3500->4000->4456 [color="seagreen4"]
+2500->2736->3000->3500->4000->4456 [color="seagreen4"]
 4456->4500->4600->4700->4800->4821->4900->5000 [color="seagreen4"]
 4456->4500->4600->4700->4800->4821->4900->5000 [color="seagreen4"]
-5000->5050->5100->5150->5174->5195 [color="seagreen4"]
-5000->5050->5100->5150->5174->5195 [color="seagreen4"]
-5195->5196->5197->5198->5199->5200 [color="green"]
+5000->5018->5050->5100->5150->5174->5190 [color="seagreen4"]
+5000->5018->5050->5100->5150->5174->5190 [color="seagreen4"]
+5190->5191->5192->5193->5194->5195->5196->5197->5198->5199->5200 [color="green"]
 5200->5201->5202->5203->5204->5205->5206->5207->5208->5209->5210 [color="green"]
 5210->5211->5212->5213->5214->5215->5216->5217->5218->5219->5220 [color="green"]
 5220->5221->5222->5223->5224->5225->5226->5227->5228->5229->5230 [color="green"]
@@ -30,8 +30,8 @@ digraph viridia
 5320->5321->5322->5323->5324->5325->5326->5327->5328->5329->5330 [color="green"]
 5330->5340->5350->5357->5360->5370->5380->5386->5390->5400 [color="seagreen4"]
 5330->5340->5350->5357->5360->5370->5380->5386->5390->5400 [color="seagreen4"]
-5400->5450->5500->6000->6500->6782->7000 [color="seagreen4"]
-5400->5450->5500->6000->6500->6782->7000 [color="seagreen4"]
+5400->5450->5500->6000->6199->6204->6243->6245->6500->6782->7000 [color="seagreen4"]
+5400->5450->5500->6000->6199->6204->6243->6245->6500->6782->7000 [color="seagreen4"]
 7000->7204->7500->7850->"now" [color="seagreen4"]
 7000->7204->7500->7850->"now" [color="seagreen4"]
 
@@ -287,7 +287,9 @@ digraph viridia
 "Deorsai Protectorate founded" [label="Deorsai Protectorate founded\non Viridia Segunda"]
 "Deorsai Protectorate founded" -> 5174 [dir="both" color="red"]
 //"Deorsai Protectorate founded" -> "Deorsai Protectorate"
-"UVSDF forms" -> "Deorsai Protectorate founded"
+// [[Jason Ironheart]] gives us a date for UVSDF forms, so this line is
+// redundant
+//"UVSDF forms" -> "Deorsai Protectorate founded"
 // This line is now redundant, as [[Greenlings]] gives an exact date for WFD
 //"Deorsai Protectorate founded" -> "White Flower Dreaming"
 "Dula Jyrexil invents Core Process" -> "Malika Core Grid deployed"
@@ -350,7 +352,9 @@ digraph viridia
 // [[Eloi Farms]]
 "Eloi Farms created on Viridia Prime" -> 5218 [dir="both" color="red"]
 "birth of Cerys Irolat" -> "Cerys Irolat"
-"birth of Cerys Irolat" -> "Eloi Farms created on Viridia Prime"
+// [[Cerys Irolat]] tells us his/her birth was prior to 5212, making this
+// line redundant
+//"birth of Cerys Irolat" -> "Eloi Farms created on Viridia Prime"
 "activation of Second Nova Generator" -> "theft of Second Nova Generator"
 "Eloi Farms created on Viridia Prime" -> "activation of Second Nova Generator" -> "Eloi Farms shut down"
 "Eloi Farms shut down" -> "Eloi Farms reopened to produce Juvi Juice" [label="decades"]
@@ -391,6 +395,11 @@ digraph viridia
 
 // [[Estyrian Conflict]]
 "Parliament of Worlds created" -> "Estyria joins Parliament of Worlds" -> 5264
+// We know Estyria joining PoW was the cause of the Estyrian conflict, so
+// we assume it occurred very shortly prior.  This line is used just for
+// placement (hence color="white", to make it invisible)
+5263 -> "Estyria joins Parliament of Worlds" [color="white"]
+"Estyria joins Parliament of Worlds" -> "Estyrian Conflict begins" [label="causes" color="blue"]
 "Estyrian Conflict begins" -> 5264 [dir="both" label="approx" color="blue"]
 5267 -> "Estyrian Conflict ends" [dir="both" label="approx" color="blue"]
 
@@ -502,5 +511,39 @@ digraph viridia
 
 // [[Okaki Hontoyo]]
 "birth of Commodore Lucius Claymore" -> "death of Okaki Hontoyo" -> "death of Commodore Lucius Claymore"
+
+######
+
+
+// [[Iaasa]]
+5018 -> "Freehold of Iaasa established" [dir="both" color="red"]
+"United People's\nRevolutionary Confederacy\nof Free Rocks" -> "Iaasa destroyed"
+
+// [[Immolation of Sorrows]]
+5275 -> "First Annual Immolation of Sorrows"
+
+// [[Intoa]]
+// not written yet
+
+// [[Cerys Irolat]]
+"birth of Cerys Irolat" -> 5212 -> "death of Cerys Irolat"
+"Ta'rot'rag Prophecy" -> "death of Cerys Irolat"
+"death of Cerys Irolat" -> "Ta'rot'rag Prophecy\nrevealed a hoax" [label="decades"]
+5298 -> "Ta'rot'rag Prophecy\nrevealed a hoax" [dir="both" color="red"]
+
+// [[Jason Ironheart]]
+"birth of Jason Ironheart" -> 5191 [dir="both" color="red"]
+5302 -> "death of Jason Ironheart" [dir="both" color="red"]
+5206 -> "Ironheart joins UVSDF" [dir="both" color="red"]
+5211 -> "Ironheart re-joins UVSDF" [dir="both" color="red"]
+5236 -> "Ironheart made Supreme Commander of UVSDF" [dir="both" color="red"]
+"UVSDF forms" -> 2736 [dir="both" color="red"]
+"birth of Logomere" -> 5201 [dir="both" color="red"]
+// These are almost certainly irrelevant
+"birth of Togen Jyrexil" -> 6204 [dir="both" color="red"]
+"Togen Jyrexil made Supreme Commander of UVSDF" -> 6243 [dir="both" color="red"]
+6245 -> "death of Togen Jyrexil" [dir="both" color="red"]
+"birth of Loir Tasseld" -> 6199 [dir="both" color="red"]
+"Loir Tasseld made Supreme Commander of UVSDF" -> 6245 [dir="both" color="red"]
 
 }
