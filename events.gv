@@ -397,8 +397,8 @@ digraph viridia
 "Parliament of Worlds created" -> "Estyria joins Parliament of Worlds" -> 5264
 // We know Estyria joining PoW was the cause of the Estyrian conflict, so
 // we assume it occurred very shortly prior.  This line is used just for
-// placement (hence color="white", to make it invisible)
-5263 -> "Estyria joins Parliament of Worlds" [color="white"]
+// placement (hence style="invis")
+5263 -> "Estyria joins Parliament of Worlds" [style="invis"]
 "Estyria joins Parliament of Worlds" -> "Estyrian Conflict begins" [label="causes" color="blue"]
 "Estyrian Conflict begins" -> 5264 [dir="both" label="approx" color="blue"]
 5267 -> "Estyrian Conflict ends" [dir="both" label="approx" color="blue"]
@@ -545,5 +545,13 @@ digraph viridia
 6245 -> "death of Togen Jyrexil" [dir="both" color="red"]
 "birth of Loir Tasseld" -> 6199 [dir="both" color="red"]
 "Loir Tasseld made Supreme Commander of UVSDF" -> 6245 [dir="both" color="red"]
+
+// [[Istvex]]
+"Operation Aurora" -> "Istvex wedding" [label="two weeks"]
+5298 -> "Istvex wedding" [dir="both" color="red"]
+5298 -> "death of Logomere" [color="cyan" label="implied: \"several years\""]
+// for placement, based on "several years" mentioned above
+5301 -> "death of Logomere" [style="invis"]
+
 
 }
