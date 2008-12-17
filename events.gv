@@ -330,6 +330,19 @@ digraph viridia
 "construction of First Nova Generator" -> "expansion of First Nova Generator" -> "disappearance of First Nova Generator"
 "Logomere returns from Hermes Cluster" -> "expansion of First Nova Generator" [label="months"]
 
+// [[Commodore Lucius Claymore]] says Logomere "first entered military
+// history" with Evyl Nebula and the ensuing court-martial, so we assume
+// anything else in his military career comes later
+"Logomere court-martial" -> "Logomere returns from Hermes Cluster" [color="cyan" label="assumed"]
+
+// an estimate -- we know Logomere was born in 5201, enlisted no earlier
+// than sometime between 5216 and 5221, and got himself promoted to
+// Captain all before this expedition.  After this expedition, we had the
+// court-martial, and an exploration of the Hermes Cluster, all before the
+// expansion of NG1
+5224 -> "expedition to Evyl Nebula" [style="invis"]
+
+
 //// Although Dust Men sightings were blamed on Fangalexia, the blame was
 //// unfounded, as the first sightings actually happened before the drug
 //// was developed.
