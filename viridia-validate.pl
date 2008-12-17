@@ -332,6 +332,15 @@ sub getUserPass()
 # extracting information as we go
 sub init()
 {
+  if (! -d viridiaDir())
+  {
+    mkdir viridiaDir();
+  }
+  if (! -d fileContent(""))
+  {
+    mkdir fileContent("");
+  }
+
   if (! hasViridiaCookie())
   {
     my ($user,$pass) = getUserPass();
