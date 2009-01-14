@@ -12,8 +12,9 @@ digraph viridia
 2500->2736->3000->3500->4000->4456 [color="seagreen4"]
 4456->4460->4500->4600->4700->4800->4821->4900->5000 [color="seagreen4"]
 4456->4460->4500->4600->4700->4800->4821->4900->5000 [color="seagreen4"]
-5000->5018->5050->5100->5150->5174->5190 [color="seagreen4"]
-5000->5018->5050->5100->5150->5174->5190 [color="seagreen4"]
+5000->5018->5050->5100->5150->5174->5180 [color="seagreen4"]
+5000->5018->5050->5100->5150->5174->5180 [color="seagreen4"]
+5180->5181->5182->5183->5184->5185->5186->5187->5188->5189->5190 [color="green"]
 5190->5191->5192->5193->5194->5195->5196->5197->5198->5199->5200 [color="green"]
 5200->5201->5202->5203->5204->5205->5206->5207->5208->5209->5210 [color="green"]
 5210->5211->5212->5213->5214->5215->5216->5217->5218->5219->5220 [color="green"]
@@ -582,10 +583,39 @@ digraph viridia
 ######
 
 // [[Jaxpel Project]]
-// [[Wee Joo]]
-// [[Jun-fruit]]
-// [[Juvi Juice]]
-// [[Dula Jyrexil]]
+5249 -> "Jaxpel Project begins" [dir="both" color="red"]
+5285 -> "Vermailians declare war on Viridians" [dir="both" color="red"]
 
+// [[Hans Jerimoth]]
+"Love Junta formed" -> "Hans Jerimoth invented"
+5238 -> "Hans Jerimoth invented" [dir="both" color="red"]
+5238 -> "Ven'rom'es invented" [dir="both" color="red"]
+5250 -> "Hans Jerimoth \"killed\"" [dir="both" color="red"]
+5302 -> "Love Junta dismantled" [dir="both" color="red"]
+
+// [[Wee Joo]]
+"birth of Wee Joo" -> "Wee Joo joins Protheon Institute for Higher Thought" -> "Hands Alive social movement begins"
+
+// [[Jun-fruit]]
+// no relevent dates
+
+// [[Jungle Pie]]
+// no relevent dates
+
+// [[Juvi Juice]]
+5264 -> "activation of Second Nova Generator" [dir="both" color="red"]
+5265 -> "Eloi Farms shut down" [dir="both" color="red"]
+5282 -> "Eloi Farms reopened to produce Juvi Juice" [dir="both" color="red"]
+5284 -> "first Juvi Juice shop opens" [dir="both" color="red"]
+5308 -> "Juvi Juice Inc. bankrupt" [dir="both" color="red"]
+
+// [[Dula Jyrexil]]
+5182 -> "birth of Dula Jyrexil" [dir="both" color="red"]
+// probably not interesting
+// 5196 -> "Jyrexil family moves to Miakovos-Pameka" [dir="both" color="red"]
+5200 -> "Achronic Inverter invented by Dula Jyrexil" -> 5202
+5207 -> "Dula Jyrexil invents Core Process" [dir="both" color="red"]
+5208 -> "Dula Jyrexil disappears" [dir="both" color="red"]
+5248 -> "woman, presumably Dula Jyrexil\nmoves into Elsoni Starsnare" [dir="both" color="red"]
 
 }
