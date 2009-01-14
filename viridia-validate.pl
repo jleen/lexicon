@@ -405,13 +405,17 @@ sub init()
   }
 
   # These are a few articles where the above heuristic is incorrect
-  for my $art (('Almnetic Decay',
+  for my $art (('Achronic Inverter',
+                'Almnetic Decay',
                 'Arcturianism',
                 'Astrogation',
+                'Crilinka',
                 'Dries Historical Catalog',
                 'Druniad',
                 'Erasermind',
+                'First Explorers',
                 'Garott Ornati',
+                'Illbreed',
                 'Intoa',
                 'No-Nothing',
                 'Orsinder',
