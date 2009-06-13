@@ -252,14 +252,24 @@ sub getAuthor($)
   @art = grep { !m/^\s*$/ } @art;
   my $auth = '';
 
-  if (1 < scalar @art)
+  if (0 < scalar @art)
   {
     $auth = pop @art;
 
+    $auth =~ s/Thucidides Plutonium/Thucydides Plutonium/;
+
     $auth =~ s/^For your benefit.\s*//i;    # common sig of MK
+    $auth =~ s/is gathering its notes on this subject\.//i; # WIP of R3
+    $auth =~ s/apologizes for the length.*//;
+    $auth =~ s/is preparing.*//;
+    $auth =~ s/has returned.*//;
+    $auth =~ s/doesn't need to do.*//;
+    $auth =~ s/LanceM/Lance M/;
+
     $auth =~ s/'//g;                        # remove italics and bolding
     $auth =~ s/^-*//;
     $auth =~ s/^\s*//;
+    $auth =~ s/-*$//;
     $auth =~ s/\[\[(.*)\]\]/$1/;            # some sigs are wikilinks
     $auth =~ s/.*\|//;
     $auth =~ s/^\s+//;
@@ -407,26 +417,50 @@ sub init()
   # These are a few articles where the above heuristic is incorrect
   for my $art (('Achronic Inverter',
                 'Almnetic Decay',
+                'Arcological Mania',
                 'Arcturianism',
                 'Astrogation',
+                'Byforalla',
+                'Core Process',
                 'Crilinka',
+                'Ctjn Empire',
+                'Darkness Ascending',
                 'Dries Historical Catalog',
                 'Druniad',
+                'Dust Men',
+                'Endotian Calendar',
                 'Erasermind',
                 'First Explorers',
+                'Flarebird',
                 'Garott Ornati',
+                'Hegemonic Purge',
+                'Hermes Cluster',
                 'Illbreed',
                 'Intoa',
+                'Juvi Juice',
+                'Knosis',
+                'Kriegball',
+                'Lanian Tribes',
+                'Logomerology',
                 'No-Nothing',
                 'Orsinder',
                 'Parallax Urgency',
                 'Starlight Documents',
+                'Tiari',
                 'Tomorrow Hive',
+                'Viridia Prime',
                 'Xenomathematics'))
   {
     $canonNm->{$art} = $art;
   }
+  $canonNm->{'Captain Logomere'} = 'Logomere, Captain Joseph';
+  $canonNm->{'Dagmar Yvensk'} = 'Yvensk, Dagmar';
+  $canonNm->{'Dula Jyrexil'} = 'Jyrexil, Dula';
   $canonNm->{'Emmanuel Grippe'} = 'Grippe, Emmanuel';
+  $canonNm->{'Istvex'} = 'Istvex, Nia-Ume and Kyril';
+  $canonNm->{'First Nova Generator'} = 'Nova Generator, First';
+  $canonNm->{'Second Nova Generator'} = 'Nova Generator, Second';
+  $canonNm->{'Third Nova Generator'} = 'Nova Generator, Third';
 
   # build list of references (by author)
   foreach my $art (@all)
