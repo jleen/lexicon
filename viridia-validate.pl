@@ -145,6 +145,7 @@ sub login($$)
     $article =~ s/ /_/g;
 
     return '' if ($article eq "Welcome");
+    return '' if ($article =~ m|^#|);
 
     return $content->{$article} if (exists $content->{$article});
 
@@ -265,7 +266,9 @@ sub getAuthor($)
     $auth =~ s/has returned.*//;
     $auth =~ s/doesn't need to do.*//;
     $auth =~ s/LanceM/Lance M/;
+    $auth =~ s/is compiling.*//;
 
+    $auth =~ s/^.*?'+(.*)'+/$1/;
     $auth =~ s/'//g;                        # remove italics and bolding
     $auth =~ s/^-*//;
     $auth =~ s/^\s*//;
@@ -419,6 +422,7 @@ sub init()
                 'Almnetic Decay',
                 'Arcological Mania',
                 'Arcturianism',
+                'Artifacturals',
                 'Astrogation',
                 'Byforalla',
                 'Core Process',
@@ -435,6 +439,7 @@ sub init()
                 'Garott Ornati',
                 'Hegemonic Purge',
                 'Hermes Cluster',
+                'Heterochron',
                 'Illbreed',
                 'Intoa',
                 'Juvi Juice',
@@ -442,6 +447,7 @@ sub init()
                 'Kriegball',
                 'Lanian Tribes',
                 'Logomerology',
+                'M701-CL048',
                 'No-Nothing',
                 'Orsinder',
                 'Parallax Urgency',
@@ -555,7 +561,9 @@ sub buildIndex()
     "= Index =\n\n",
     "Alphabetical index of all entries in the Viridian Lexicon.  ",
     "See also [[Timeline]] for a chronological listing of major events, ",
-    "or view pages [[ByAuthor|by author]].\n";
+    "or view pages [[ByAuthor|by author]].\n\n";
+
+  print FILE "[[#$_|$_]]\n" for ('A' .. 'Z');
 
   my @all = all();
 
@@ -564,7 +572,7 @@ sub buildIndex()
     my @arts = grep { $canonNm->{$_} =~ m/^$fl/ } @all;
     @arts = sort { $canonNm->{$a} cmp $canonNm->{$b} } @arts;
 
-    print FILE "\n== $fl (", scalar @arts, ") ==\n";
+    print FILE "\n<<Anchor($fl)>>\n== $fl (", scalar @arts, ") ==\n";
     for (@arts)
     {
       print FILE " * ", articleLink($_), " (";
